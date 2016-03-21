@@ -21,3 +21,5 @@ insecure                # Allow all DB writes from clients (for prototyping)
 accounts-password
 ian:accounts-ui-bootstrap-3
 twbs:bootstrap
+accounts-facebook
+accounts-google
