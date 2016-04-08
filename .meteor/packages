@@ -23,3 +23,6 @@ ian:accounts-ui-bootstrap-3
 twbs:bootstrap
 accounts-facebook
 accounts-google
+iron:router
+zimme:active-route
+http

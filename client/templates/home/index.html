@@ -1,0 +1,14 @@
+<template name="homeIndex">
+    <h2>Index</h2>
+    <form class="registerForm">
+        <input type="text" name="summonerName" placeholder="League of Legends username">
+        <button type="submit">Submit</button>
+    </form>
+    <div>
+        {{#if validSummonerName}}
+            Valid
+        {{else}}
+            Invalid
+        {{/if}}
+    </div>
+</template>

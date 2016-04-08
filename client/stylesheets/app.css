@@ -1,0 +1,17 @@
+body {
+    padding-top: 70px;
+}
+
+.teamColumn {
+    position: fixed;
+    height: 100%;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0px 0px 1px;
+}
+
+.teamColumnItem {
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 1px 0px;
+}

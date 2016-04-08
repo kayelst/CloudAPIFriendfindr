@@ -1,0 +1,9 @@
+<template name="teamColumn">
+    <div class="col-lg-2 col-lg-offset-10 teamColumn">
+        <b>Your teams</b>
+        <hr />
+        {{#each teams}}
+            {{> teamColumnItem}}
+        {{/each}}
+    </div>
+</template>
