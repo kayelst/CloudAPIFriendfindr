@@ -16,11 +16,15 @@ if (Meteor.settings.leagueApiKey != null) {
         },
         'isValidSummonerName': function (name) {
             this.unblock();
-            HTTP.get("https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey, function (err, res) {
-                return err == null;
-            });
+            var syncMethod = Meteor.wrapAsync(HTTP.get);
+            try {
+                var result = syncMethod("https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey);
+                return true;
+            }
+            catch (ex) {
+                return false;
+            }
         }
     });
-
 }
-else console.error("League API key not found, do you have a settings file named 'settings.json'? Start meteor with 'meteor run --settings settings.json' if you do.")
+else console.error("League API key not found, do you have a settings file named 'settings.json'? Start meteor with 'meteor run --settings settings.json' if you do.");

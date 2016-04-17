@@ -6,7 +6,10 @@ Template.homeIndex.events({
    'submit .registerForm': function(event) {
        event.preventDefault();
        Session.set("validSummonerName", false);
-       Meteor.call("isValidSummonerName", event.target.summonerName.value.toLowerCase());
+       Meteor.call("isValidSummonerName", event.target.summonerName.value.toLowerCase(), function (error, result) {
+           if (result) Session.set("validSummonerName", true);
+           else Session.set("validSummonerName", false);
+       });
    }
 });
 
