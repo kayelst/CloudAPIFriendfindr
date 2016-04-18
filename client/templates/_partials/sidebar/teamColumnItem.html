@@ -1,12 +1,12 @@
 <template name="teamColumnItem">
     <div class="col-lg-12 teamColumnItem">
         <h5>{{teamName}}</h5>
-        <div>Team owner: {{this.owner}}</div>
+        <div>Team owner: {{teamOwner}}</div>
         <div>Your team:
             <button class="glyphicon glyphicon-menu-down" data-toggle="collapse" data-target="#team-{{teamName}}"></button>
             <ul id="team-{{teamName}}" class="collapse">
                 {{#each members}}
-                    <li>{{this.name}}</li>
+                    <li>{{name}}</li>
                 {{/each}}
             </ul>
         </div>
