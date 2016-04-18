@@ -19,12 +19,21 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a class="glyphicon glyphicon-cog" href="{{pathFor 'settings'}}"></a></li>
                     <li>
-                        <div class="">
+                        <div class="text-center" style="margin-top: 15px;">
                             {{#if currentUser}}
-                                {{currentUser.emails.[0].address}}
-                            {{else}}
-                                {{> loginButtons}}
+                                {{#if currentUser.services.google.email}}
+                                    {{currentUser.services.google.email}}
+                                {{else}}
+                                    {{#if currentUser.emails.[0].address}}
+                                        {{currentUser.emails.[0].address}}
+                                    {{/if}}
+                                {{/if}}
                             {{/if}}
+                        </div>
+                    </li>
+                    <li>
+                        <div style="margin-top: 15px;">
+                            {{> loginButtons}}
                         </div>
                     </li>
                 </ul>
