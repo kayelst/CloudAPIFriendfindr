@@ -1,14 +1,22 @@
 <template name="layout">
     {{> nav}}
     {{> teamColumn}}
-    <div class="container-fluid">
+    <div class="container-fluid" id="mainBody">
         <h1>Welcome champions!</h1>
-        <div class="images">
-        	<img src="ass.jpg"  alt="Mountain View" style="width:350px;height:185px;">
-        	<img src="bear.jpg" alt="Mountain View" style="width:350px;height:185px;">
-        	<img src="mage.jpg" alt="Mountain View" style="width:350px;height:185px;">
+        <div class="row">
+            <div class="col-lg-3">
+                <img class="img-responsive" id="img-with-radius" src="ass.jpg" alt="Mountain View">
+            </div>
+            <div class="col-lg-3">
+                <img class="img-responsive" id="img-with-radius" src="bear.jpg" alt="Mountain View">
+            </div>
+            <div class="col-lg-3">
+                <img class="img-responsive" id="img-with-radius" src="mage.jpg" alt="Mountain View">
+            </div>
         </div>
-        {{> yield}}
         <div class="fb-like" data-layout="button"></div>
+    </div>
+    <div class="container-fluid">
+        {{> yield}}
     </div>
 </template>
