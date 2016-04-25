@@ -3,9 +3,23 @@
     <form class="settingsForm form-control">
         <div class="row col-lg-9">
             <span class="col-lg-6">Name: {{currentUser.profile.username}}</span>
-            {{#if }}
-                <input type="radio" name="gender" id="status-radio-1" value="active" {{checked_eq status 'active'}} >
-            {{/if}}
+        </div>
+        <hr>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input type="radio" name="gender" id="radio-gender-1"
+                           value="m" {{radio_equals 'm' currentUser.profile.gender}} >
+                    <span>Male</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <input type="radio" name="gender" id="radio-gender-2"
+                           value="f" {{radio_equals 'f' currentUser.profile.gender}} >
+                    <span>Female</span>
+                </div>
+            </div>
         </div>
         <hr>
         <div class="row">
