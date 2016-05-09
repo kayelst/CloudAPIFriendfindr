@@ -38,3 +38,17 @@ h1 {
 	text-align: center;
 	max-width: 60%;
 }
+
+#teamform {
+	text-align: center;
+}
+
+#chosebox {
+	max-width: 75%;
+}
+
+#placeholdersTeam, #text {
+	max-width: 20%;
+	text-align: right;
+}
+
