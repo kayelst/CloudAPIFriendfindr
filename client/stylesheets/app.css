@@ -1,6 +1,6 @@
 body {
     padding-top: 70px;
-    background-color: #00BFFF;
+    background-color: #A9A9A9;
     font-family: sans-serif;
     color: blue;
 }
@@ -42,3 +42,17 @@ img {
 	text-align: center;
 	max-width: 60%;
 }
+
+#teamform {
+	text-align: center;
+}
+
+#chosebox {
+	max-width: 75%;
+}
+
+#placeholdersTeam, #text {
+	max-width: 20%;
+	text-align: right;
+}
+
