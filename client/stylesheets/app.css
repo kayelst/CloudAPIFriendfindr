@@ -1,6 +1,7 @@
 body {
     padding-top: 70px;
-    background-color: #A9A9A9;
+    padding-left: 10px;
+    background-color: #00BFFF;
     font-family: sans-serif;
     color: blue;
 }
@@ -11,7 +12,7 @@ h1 {
 	color: #FFD700;
 }
 
-.teamColumn {
+.team-column {
     position: fixed;
     height: 80%;
     border-style: solid;
@@ -23,22 +24,17 @@ h1 {
     background-origin: content-box;
 }
 
-.teamColumnItem {
+.team-column-item {
     border-style: solid;
     border-color: black;
     border-width: 0px 0px 1px 0px;
 }
 
-.images {
-	max-width: 100%;
-    height: auto;
-}
-
-img {
+#img-with-radius {
 	border-radius: 20px;
 }
 
-.container-fluid {
+#main-body {
 	text-align: center;
 	max-width: 60%;
 }

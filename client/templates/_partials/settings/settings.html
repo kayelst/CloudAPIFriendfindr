@@ -1,0 +1,69 @@
+<template name="settings">
+    <h2>Settings Page</h2>
+    <form class="settingsForm form-control">
+        <div class="row col-lg-9">
+            <span class="col-lg-6">Name: {{currentUser.profile.username}}</span>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-3">
+                    <input type="radio" name="gender" id="radio-gender-1"
+                           value="m" {{radio_equals 'm' currentUser.profile.gender}} >
+                    <span>Male</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <input type="radio" name="gender" id="radio-gender-2"
+                           value="f" {{radio_equals 'f' currentUser.profile.gender}} >
+                    <span>Female</span>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <span class="col-lg-10">Email:
+                {{#if currentUser.services.google.email}}
+                    {{currentUser.services.google.email}}
+                {{else}}
+                    {{#if currentUser.emails.[0].address}}
+                        {{currentUser.emails.[0].address}}
+                    {{/if}}
+                {{/if}}
+            </span>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-8">
+                    <span class="col-lg-2">Summoner name: </span>
+                    <input type="text" class="col-lg-3" value="{{currentUser.summonerName}}">
+                    <button type="button" class="col-lg-1">Check</button>
+                    {{#if validSummonerName}}
+                        <div class="glyphicon glyphicon-ok"></div>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    {{#if currentUser.verified}}
+                        <span class="alert alert-success">Verified</span>
+                    {{else}}
+                        <span class="alert-warning">Unverified</span>
+                        <button class="col-lg-2">Verify</button>
+                    {{/if}}
+                </div>
+            </div>
+        </div>
+        <hr>
+        <button type="submit" class="btn btn-warning">
+            <div class="glyphicon glyphicon-save"></div>
+            Save changes
+        </button>
+        <button type="button" class="btn btn-danger">
+            <div class="glyphicon glyphicon-remove"></div>
+            Delete account
+        </button>
+    </form>
+</template>
