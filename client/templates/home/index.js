@@ -22,7 +22,7 @@ Template.homeIndex.events({
        		}
        		else {
        			console.log("Succes!" + result);
-       			Meteor.user.insert({'Name':'Thesmoggy', 'LeagueID': result})
+       			Meteor.user.({'Name':'Thesmoggy', 'LeagueID': result})
 
        		}
 		});
