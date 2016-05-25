@@ -1,5 +1,5 @@
-<template name="homeTeams">
-    <form class="teamsearching" id="teamform">
+<template name="homePlayers">
+    <form class="Playersearching" id="playerform">
     	<div id="placeholdersTeam col-lg-12">
         	<input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name"><div class="col-lg-1"></div>
         	<input type="text" class="col-lg-2" name="Language" id="Language" placeholder="Language"><div class="col-lg-1"></div>
@@ -18,15 +18,30 @@
         		</select> 
       		</div>
     	  </div>
-      <div>
-        <ol>
-          <ul></ul>
-          <ul></ul>
-          <ul></ul>
-        </ol>
+        <div>
+          <ol>
+            <ul>
+              {{#each players}}
+                  {{#if languageCheck Language}}<li>hi, {{name}}</li>{{/if}}
+              {{/each}}
+            </ul>
+              }
+          </ol>
       </div>
-      <button id="AddingPlayer">Add player</button>
+      <button id="submit">Submit</button>
     </form>
 </template>
 
+<template name="persons">
+  <input class="age" type="number" value="{{filter}}">
+  <ul>
+    {{#each personsFiltered}}
+      {{> person}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="person">
+  <li>{{name}} is {{age}}</li>
+</template>
 

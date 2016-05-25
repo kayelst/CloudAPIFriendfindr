@@ -22,7 +22,7 @@ Template.homeIndex.events({
        		}
        		else {
        			console.log("Succes!" + result);
-       			Meteor.user.({'Name':'Thesmoggy', 'LeagueID': result})
+       			Meteor.user.save({'Name':'Thesmoggy', 'LeagueID': result})
 
        		}
 		});
@@ -32,3 +32,4 @@ Template.homeIndex.events({
 Template.registerHelper('validSummonerName',function(){
     return Session.get("validSummonerName");
 });
+
