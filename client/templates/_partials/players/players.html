@@ -8,13 +8,14 @@
     	<p id="text" >Server:</p>
         <div class="form-group" id="choicebox">
       		<div class="col-sm-2">
-        		<select id="server" class="form-control">
+        		<select id="Server" name="Server" class="form-control">
           		<option value="EUW">EUW</option>
           		<option value="NA">NA</option>
           		<option value="EUNE">EUNE</option>
           		<option value="TR">TR</option>
           		<option value="LAN">LAN</option>
           		<option value="JAP">JAP</option>
+              <option value=""></option>
         		</select> 
       		</div>
     	  </div>
@@ -22,26 +23,22 @@
           <ol>
             <ul>
               {{#each players}}
+                  <!--{{#if nameCheck Name}}<li>holaaa, {{name}}</li>{{/if}}
                   {{#if languageCheck Language}}<li>hi, {{name}}</li>{{/if}}
+                  {{#if microphoneCheck Microphone}}<li>hoi, {{name}}</li>{{/if}}
+                  {{#if serverCheck Server}}<li>hey, {{name}}</li>{{/if}}-->
+
+                  {{#if languageCheck Language}}
+                    {{#if microphoneCheck Microphone}}
+                      {{#if serverCheck Server}}
+                      <li>hi, {{name}}</li>
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
               {{/each}}
             </ul>
-              }
           </ol>
       </div>
       <button id="submit">Submit</button>
     </form>
 </template>
-
-<template name="persons">
-  <input class="age" type="number" value="{{filter}}">
-  <ul>
-    {{#each personsFiltered}}
-      {{> person}}
-    {{/each}}
-  </ul>
-</template>
-
-<template name="person">
-  <li>{{name}} is {{age}}</li>
-</template>
-
