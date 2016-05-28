@@ -14,15 +14,9 @@ Template.homePlayers.helpers({
 });
 
 Template.homePlayers.helpers({
-<<<<<<< Updated upstream
-  'serverCheck': function (value1) {
-    return value1.toLowerCase() === Session.get("Server").toLowerCase();
-      console.log("value is " + value1)
-=======
   'serverCheck': function (value) {
     if (!value || !Session.get("Server")) return true;
     return value.toLowerCase() === Session.get("Server").toLowerCase();
->>>>>>> Stashed changes
   }
 });
 
@@ -40,14 +34,6 @@ Template.homePlayers.events({
        Session.set("Microphone", Microphone.checked);
        Session.set("Language", document.getElementById("Language").value);
        Session.set("Server", document.getElementById("Server").value);
-<<<<<<< Updated upstream
-       //var choicebox = document.getElementById("server").value;
-       //console.log(Server);
-       //console.log(Name);
-       /*console.log(Language);
-       console.log(Microphone);*/
-=======
->>>>>>> Stashed changes
    }
 });
 
