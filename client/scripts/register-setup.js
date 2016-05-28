@@ -5,11 +5,11 @@
 Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [{
-        fieldName: 'username',
-        fieldLabel: 'Username',
+        fieldName: 'displayname',
+        fieldLabel: 'Display Name',
         inputType: 'text',
         visible: true,
-        validate: function(value, errorFunction) {
+        validate: function (value, errorFunction) {
             if (!value) {
                 errorFunction("Please write your username");
                 return false;
@@ -21,7 +21,19 @@ Accounts.ui.config({
         fieldName: 'summoner-name',
         fieldLabel: 'Summoner Name',
         inputType: 'text',
-        visible: true
+        visible: true,
+        validate: function (value, errorFunction) {
+
+            var syncMethod = Meteor.wrapAsync(Meteor.call);
+            try {
+                var result = syncMethod('isValidSummonerName', value);
+                return result;
+            }
+            catch (ex) {
+                errorFunction("123");
+                return false;
+            }
+        }
     }, {
         fieldName: 'gender',
         showFieldLabel: false,
@@ -78,7 +90,7 @@ Accounts.ui.config({
         inputType: 'checkbox',
         visible: true,
         saveToProfile: false,
-        validate: function(value, errorFunction) {
+        validate: function (value, errorFunction) {
             if (value) {
                 return true;
             } else {
