@@ -124,7 +124,7 @@ Accounts.ui.config({
         fieldLabel: 'Language',
         inputType: 'select',
         showFieldLabel: true,
-        empty: 'Please select your main role',
+        empty: 'Please select your language',
         data: [{
             id: 0,
             label: 'English',
