@@ -23,18 +23,6 @@
         </div>
         <hr>
         <div class="row">
-            <span class="col-lg-10">Email:
-                {{#if currentUser.services.google.email}}
-                    {{currentUser.services.google.email}}
-                {{else}}
-                    {{#if currentUser.emails.[0].address}}
-                        {{currentUser.emails.[0].address}}
-                    {{/if}}
-                {{/if}}
-            </span>
-        </div>
-        <hr>
-        <div class="row">
             <div class="row">
                 <div class="col-lg-8">
                     <span class="col-lg-2">Summoner name: </span>
@@ -57,6 +45,39 @@
             </div>
         </div>
         <hr>
+        <div class="row">
+            <div class="form-group" Name = "Server">
+                <div class="col-sm-2">
+                <p> Pick what server you play on </p>
+                    <select id="Server" class="form-control">
+                    <option value="EUW">EUW</option>
+                    <option value="NA">NA</option>
+                    <option value="EUNE">EUNE</option>
+                    <option value="TR">TR</option>
+                    <option value="LAN">LAN</option>
+                    <option value="JAP">JAP</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-2">
+                <p> Pick what Role you main </p>
+                    <select id="Role" class="form-control">
+                    <option value="TOP">TOP</option>
+                    <option value="JGL">Jungle</option>
+                    <option value="MID">Midlane</option>
+                    <option value="ADC">Marksman</option>
+                    <option value="SUP">Support</option>
+                    </select> 
+                </div>
+            </div>
+        </div>
+        <hr>
+            {{> MicCheck}}
+        <hr>
         <button type="submit" class="btn btn-warning">
             <div class="glyphicon glyphicon-save"></div>
             Save changes
@@ -66,4 +87,14 @@
             Delete account
         </button>
     </form>
+</template>
+
+<template name="MicCheck">
+    <div class="row">
+        <form class="col-lg-12">
+            <p>Do you own a microphone?</p>
+            <input type="radio" name="MicroCheck" value="true"> Yes<br>
+            <input type="radio" name="MicroCheck" value="false"> No
+        </form>
+    </div>
 </template>

@@ -12,7 +12,8 @@ Template.homePlayers.helpers({
 
 Template.homePlayers.helpers({
   'serverCheck': function (value1) {
-    return value1.toLowerCase() === Session.get("choicebox").toLowerCase();
+    return value1.toLowerCase() === Session.get("Server").toLowerCase();
+      console.log("value is " + value1)
   }
 });
 
@@ -28,9 +29,9 @@ Template.homePlayers.events({
        Session.set("Name", document.getElementById("Name").value);
        Session.set("Microphone", document.getElementById("Microphone").value);
        Session.set("Language", document.getElementById("Language").value);
-       Session.set("choicebox", document.getElementById("Server").value);
+       Session.set("Server", document.getElementById("Server").value);
        //var choicebox = document.getElementById("server").value;
-       //console.log(choicebox);
+       //console.log(Server);
        //console.log(Name);
        /*console.log(Language);
        console.log(Microphone);*/
