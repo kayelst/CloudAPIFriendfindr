@@ -77,14 +77,15 @@
         </div>
         <hr>
             {{> MicCheck}}
+
         <hr>
         <div class="row">
             <div class="col-lg-5">
-                {{#if currentUser.premium}}
-                    <span class="alert alert-success">Premium</span>
+                {{#if currentUser.profile.premium}}
+                    <span class="alert alert-success">Premium account</span>
                 {{else}}
-                    <span class="alert-warning">Not premium</span>
-                    <a href="{{pathFor 'paypal'}}" class="col-lg-2">Add Subscription</a>
+                    <span class="alert alert-warning">Not premium</span>
+                    <a href="{{pathFor 'paypal'}}" class="col-lg-2">Buy Premium</a>
                 {{/if}}
             </div>
         </div>
