@@ -21,19 +21,7 @@ Accounts.ui.config({
         fieldName: 'summoner-name',
         fieldLabel: 'Summoner Name',
         inputType: 'text',
-        visible: true,
-        validate: function (value, errorFunction) {
-
-            var syncMethod = Meteor.wrapAsync(Meteor.call);
-            try {
-                var result = syncMethod('isValidSummonerName', value);
-                return result;
-            }
-            catch (ex) {
-                errorFunction("123");
-                return false;
-            }
-        }
+        visible: true
     }, {
         fieldName: 'gender',
         showFieldLabel: false,
@@ -48,7 +36,7 @@ Accounts.ui.config({
         }, {
             id: 1,
             label: 'Female',
-            value: 'f',
+            value: 'f'
 
         }],
         visible: true
@@ -65,23 +53,51 @@ Accounts.ui.config({
         }, {
             id: 1,
             label: 'NA',
-            value: 'NA',
+            value: 'NA'
         }, {
             id: 2,
             label: 'EUNE',
-            value: 'EUNE',
+            value: 'EUNE'
         }, {
-            id: 2,
+            id: 3,
             label: 'TR',
-            value: 'TR',
+            value: 'TR'
         }, {
             id: 4,
             label: 'LAN',
-            value: 'LAN',
+            value: 'LAN'
         }, {
             id: 5,
             label: 'JAP',
-            value: 'JAP',
+            value: 'JAP'
+        }],
+        visible: true
+    }, {
+        fieldName: 'role',
+        fieldLabel: 'Role',
+        inputType: 'select',
+        showFieldLabel: true,
+        empty: 'Please select your main role',
+        data: [{
+            id: 0,
+            label: 'ADC',
+            value: 'ADC'
+        }, {
+            id: 1,
+            label: 'Mid',
+            value: 'MID'
+        }, {
+            id: 2,
+            label: 'Sup',
+            value: 'SUP'
+        }, {
+            id: 3,
+            label: 'Top',
+            value: 'TOP'
+        }, {
+            id: 4,
+            label: 'Jungle',
+            value: 'JGL'
         }],
         visible: true
     }, {
@@ -98,5 +114,34 @@ Accounts.ui.config({
                 return false;
             }
         }
+    }, {
+        fieldName: 'microphone',
+        fieldLabel: 'Do you have a microphone?',
+        inputType: 'checkbox',
+        visible: true
+    }, {
+        fieldName: 'language',
+        fieldLabel: 'Language',
+        inputType: 'select',
+        showFieldLabel: true,
+        empty: 'Please select your main role',
+        data: [{
+            id: 0,
+            label: 'English',
+            value: 'English'
+        }, {
+            id: 1,
+            label: 'Dutch',
+            value: 'Dutch'
+        }, {
+            id: 2,
+            label: 'Spanish',
+            value: 'Spanish'
+        }, {
+            id: 3,
+            label: 'German',
+            value: 'German'
+        }],
+        visible: true
     }]
 });
