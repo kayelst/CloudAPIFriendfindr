@@ -5,7 +5,7 @@
 Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [{
-        fieldName: 'displayname',
+        fieldName: 'displayName',
         fieldLabel: 'Display Name',
         inputType: 'text',
         visible: true,
@@ -18,7 +18,7 @@ Accounts.ui.config({
             }
         }
     }, {
-        fieldName: 'summoner-name',
+        fieldName: 'summonerName',
         fieldLabel: 'Summoner Name',
         inputType: 'text',
         visible: true
@@ -37,7 +37,6 @@ Accounts.ui.config({
             id: 1,
             label: 'Female',
             value: 'f'
-
         }],
         visible: true
     }, {
@@ -49,27 +48,27 @@ Accounts.ui.config({
         data: [{
             id: 0,
             label: 'EUW',
-            value: 'EUW'
+            value: 'euw'
         }, {
             id: 1,
             label: 'NA',
-            value: 'NA'
+            value: 'na'
         }, {
             id: 2,
             label: 'EUNE',
-            value: 'EUNE'
+            value: 'eune'
         }, {
             id: 3,
             label: 'TR',
-            value: 'TR'
+            value: 'tr'
         }, {
             id: 4,
             label: 'LAN',
-            value: 'LAN'
+            value: 'lan'
         }, {
             id: 5,
             label: 'JAP',
-            value: 'JAP'
+            value: 'jap'
         }],
         visible: true
     }, {
@@ -81,23 +80,52 @@ Accounts.ui.config({
         data: [{
             id: 0,
             label: 'ADC',
-            value: 'ADC'
+            value: 'adc'
         }, {
             id: 1,
             label: 'Mid',
-            value: 'MID'
+            value: 'mid'
         }, {
             id: 2,
             label: 'Sup',
-            value: 'SUP'
+            value: 'sup'
         }, {
             id: 3,
             label: 'Top',
-            value: 'TOP'
+            value: 'top'
         }, {
             id: 4,
             label: 'Jungle',
-            value: 'JGL'
+            value: 'jgl'
+        }],
+        visible: true
+    }, {
+        fieldName: 'microphone',
+        fieldLabel: 'Do you have a microphone?',
+        inputType: 'checkbox',
+        visible: true
+    }, {
+        fieldName: 'language',
+        fieldLabel: 'Language',
+        inputType: 'select',
+        showFieldLabel: true,
+        empty: 'Please select your language',
+        data: [{
+            id: 0,
+            label: 'English',
+            value: 'english'
+        }, {
+            id: 1,
+            label: 'Dutch',
+            value: 'dutch'
+        }, {
+            id: 2,
+            label: 'Spanish',
+            value: 'spanish'
+        }, {
+            id: 3,
+            label: 'German',
+            value: 'german'
         }],
         visible: true
     }, {
@@ -114,34 +142,6 @@ Accounts.ui.config({
                 return false;
             }
         }
-    }, {
-        fieldName: 'microphone',
-        fieldLabel: 'Do you have a microphone?',
-        inputType: 'checkbox',
-        visible: true
-    }, {
-        fieldName: 'language',
-        fieldLabel: 'Language',
-        inputType: 'select',
-        showFieldLabel: true,
-        empty: 'Please select your language',
-        data: [{
-            id: 0,
-            label: 'English',
-            value: 'English'
-        }, {
-            id: 1,
-            label: 'Dutch',
-            value: 'Dutch'
-        }, {
-            id: 2,
-            label: 'Spanish',
-            value: 'Spanish'
-        }, {
-            id: 3,
-            label: 'German',
-            value: 'German'
-        }],
-        visible: true
     }]
-});
+})
+;
