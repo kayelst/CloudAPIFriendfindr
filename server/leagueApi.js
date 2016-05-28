@@ -30,10 +30,7 @@ if (Meteor.settings.leagueApiKey != null) {
             //Kan dan nog meerdere dingen doen tijdens de call, zodat als deze delayed is dat de website nog wel werkt.
             this.unblock();
             return HTTP.get("https://euw.api.pvp.net/api/lol/EUW/v1.4/summoner/by-name/" + name + "?api_key="+ Meteor.settings.leagueApiKey).data[name].id;
-            console.log("done with get " + id);
-
         }
-        
     });
 }
 else console.error("League API key not found, do you have a settings file named 'settings.json'? Start meteor with 'meteor run --settings settings.json' if you do.");
