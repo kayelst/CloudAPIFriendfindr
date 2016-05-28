@@ -1,6 +1,6 @@
 
 if (Meteor.settings.paypal.clientId != null && Meteor.settings.paypal.secret != null) {
-    console.log("\nUsing League API key: " + Meteor.settings.leagueApiKey);
+    console.log("Using Paypal settings:\nClientId: " + Meteor.settings.paypal.clientId + "\nSecret: " + Meteor.settings.paypal.secret);
 
     Meteor.Paypal.config({
         'host': 'api.sandbox.paypal.com',
