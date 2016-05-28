@@ -226,8 +226,10 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/iron_controller/1.0.12/web.browser/lib/controller.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/sr-Latn.i18n.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/de.i18n.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/arunoda_npm/0.2.6/web.browser/packages/arunoda_npm.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/ca.i18n.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/es.i18n.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/mrt_paypal/1.1.1/web.browser/packages/mrt_paypal.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/zh-TW.i18n.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/fa.i18n.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/sv.i18n.js" />
@@ -482,8 +484,10 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/iron_controller/1.0.12/web.browser/lib/controller.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/sr-Latn.i18n.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/de.i18n.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/arunoda_npm/0.2.6/web.browser/packages/arunoda_npm.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/ca.i18n.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/es.i18n.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/mrt_paypal/1.1.1/web.browser/packages/mrt_paypal.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/zh-TW.i18n.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/fa.i18n.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ian_accounts-ui-bootstrap-3/1.2.89/web.browser/i18n/sv.i18n.js" />
