@@ -1,44 +1,81 @@
-<template name="homePlayers">
-    <form class="Playersearching" id="playerform">
-    	<div id="placeholdersTeam col-lg-12">
-        	<input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name"><div class="col-lg-1"></div>
-        	<input type="text" class="col-lg-2" name="Language" id="Language" placeholder="Language"><div class="col-lg-1"></div>
-        	<input type="text" class="col-lg-2" name="Microphone" id="Microphone" placeholder="Microphone"><div class="col-lg-1"></div>
-    	</div>
-    	<p id="text" >Server:</p>
-        <div class="form-group" id="choicebox">
-      		<div class="col-sm-2">
-        		<select id="Server" name="Server" class="form-control">
-          		<option value="EUW">EUW</option>
-          		<option value="NA">NA</option>
-          		<option value="EUNE">EUNE</option>
-          		<option value="TR">TR</option>
-          		<option value="LAN">LAN</option>
-          		<option value="JAP">JAP</option>
-              <option value=""></option>
-        		</select> 
-      		</div>
-    	  </div>
-        <div>
-          <ol>
-            <ul>
-              {{#each players}}
-                  <!--{{#if nameCheck Name}}<li>holaaa, {{name}}</li>{{/if}}
-                  {{#if languageCheck Language}}<li>hi, {{name}}</li>{{/if}}
-                  {{#if microphoneCheck Microphone}}<li>hoi, {{name}}</li>{{/if}}
-                  {{#if serverCheck Server}}<li>hey, {{name}}</li>{{/if}}-->
-
-                  {{#if languageCheck Language}}
-                    {{#if microphoneCheck Microphone}}
-                      {{#if serverCheck Server}}
-                      <li>hi, {{name}}</li>
-                      {{/if}}
-                    {{/if}}
-                  {{/if}}
-              {{/each}}
-            </ul>
-          </ol>
+<!--<template name="homePlayers">
+  <form class="Playersearching" id="playerform">
+    <div id="placeholdersTeam col-lg-12">
+      <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
+      <input type="text" class="col-lg-2 col-lg-offset-1" name="Language" id="Language" placeholder="Language">
+      <div class="col-lg-2 col-lg-offset-1">
+        Microphone <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
       </div>
-      <button id="submit">Submit</button>
-    </form>
+    </div>
+    <div class="form-group" id="choicebox">
+      <div class="col-sm-2">
+        Server: <select id="Server" name="Server" class="form-control">
+          <option value="">select server</option>
+          <option value="EUW">EUW</option>
+          <option value="NA">NA</option>
+          <option value="EUNE">EUNE</option>
+          <option value="TR">TR</option>
+          <option value="LAN">LAN</option>
+          <option value="JAP">JAP</option>
+        </select> 
+      </div>
+    <button id="submit">Submit</button>
+    </div>
+  </form>
+  <div id="list">
+    <ol>
+      <ul class="list-group">
+        {{#each players}}
+          {{#if nameCheck name}}
+            {{#if languageCheck Language}}
+              {{#if microphoneCheck Microphone}}
+                {{#if serverCheck Server}}
+                  <li class="list-group-item col-lg-1" >hi, {{name}}</li>
+                  <button id="Add">Add player</button>
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </ol>
+  </div>
+</template>-->
+
+<template name="homePlayers">
+  <form class="Playersearching" id="playerform">
+    <div class="searching">
+        <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
+        <input type="text" class="col-lg-2 col-lg-offset-1" name="Language" id="Language" placeholder="Language">
+          Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
+          <select id="Server" name="Server" class="form-control">
+            <option value="">select server</option>
+            <option value="EUW">EUW</option>
+            <option value="NA">NA</option>
+            <option value="EUNE">EUNE</option>
+            <option value="TR">TR</option>
+            <option value="LAN">LAN</option>
+            <option value="JAP">JAP</option>
+          </select> 
+        <button id="submit">Submit</button>
+    </div>
+  </form>
+  <div id="list">
+    <ol>
+      <ul class="list-group">
+        {{#each players}}
+          {{#if nameCheck name}}
+            {{#if languageCheck Language}}
+              {{#if microphoneCheck Microphone}}
+                {{#if serverCheck Server}}
+                  <li class="list-group-item col-lg-1" >hi, {{name}}</li>
+                  <!--<button id="Add">Add player</button>-->
+                {{/if}}
+              {{/if}}
+            {{/if}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </ol>
+  </div>
 </template>
