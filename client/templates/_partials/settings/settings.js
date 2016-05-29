@@ -89,8 +89,8 @@ Template.settings.events({
             }
             else {
                 console.log("Succes!" + result);
-                Meteor.user.save({'Name':summonerName, 'LeagueID': result})
-
+                Meteor.user.update(Meteor.userId(), {$set: {"profile.summoner-name": summonerName}});
+                Meteor.user.update(Meteor.userId(), {$set: {"profile.summoner-id": result}});
             }
         });
     }
