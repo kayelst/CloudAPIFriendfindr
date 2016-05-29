@@ -45,6 +45,20 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-sm-2">
+                    <p> Pick what language you prefer to communicate with </p>
+                    <select id="language" class="form-control">
+                        <option value="english" selected="{{equals currentUser.profile.language 'english'}}">English</option>
+                        <option value="german" selected="{{equals currentUser.profile.language 'german'}}">German</option>
+                        <option value="spanish" selected="{{equals currentUser.profile.language 'spanish'}}">Spanish</option>
+                        <option value="dutch" selected="{{equals currentUser.profile.language 'dutch'}}">Dutch</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="form-group">
+                <div class="col-sm-2">
                 <p> Pick what Role you main </p>
                     <select id="role" class="form-control">
                         <option value="top" selected="{{equals currentUser.profile.role 'top'}}">TOP</option>

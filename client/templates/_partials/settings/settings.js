@@ -16,7 +16,8 @@ Template.settings.events({
                 "profile.role": role.value,
                 "profile.microphone": microphone.checked,
                 "profile.gender": template.find('input:radio[name=gender]:checked').value,
-                "profile.name": displayName.value
+                "profile.name": displayName.value,
+                "profile.language": language.value
             };
 
         Meteor.call('updateUser', newProfile);
