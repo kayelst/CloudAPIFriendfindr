@@ -9,7 +9,7 @@ Template.homeTeams.events({
        console.log(Name);
        console.log(Language);
        console.log(Microphone);
-       Router.go('homePlayers');
+       Router.go('/players');
    }
 });
 

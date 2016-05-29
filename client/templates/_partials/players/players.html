@@ -49,13 +49,21 @@
         <input type="text" class="col-lg-2 col-lg-offset-1" name="Language" id="Language" placeholder="Language">
           Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
           <select id="Server" name="Server" class="form-control">
-            <option value="">select server</option>
+            <option value="">Select server</option>
             <option value="EUW">EUW</option>
             <option value="NA">NA</option>
             <option value="EUNE">EUNE</option>
             <option value="TR">TR</option>
             <option value="LAN">LAN</option>
             <option value="JAP">JAP</option>
+          </select>
+          <select id="Role" name="Role" class="form-control">
+            <option value="">Select role</option>
+            <option value="TOP">TOP</option>
+            <option value="Jungle">Jungle</option>
+            <option value="Midlane">Midlane</option>
+            <option value="Marksman">Marksman</option>
+            <option value="Support">Support</option>
           </select> 
         <button id="submit">Submit</button>
     </div>
@@ -68,8 +76,10 @@
             {{#if languageCheck Language}}
               {{#if microphoneCheck Microphone}}
                 {{#if serverCheck Server}}
+                  {{#if roleCheck Role}}
                   <li class="list-group-item col-lg-1" >hi, {{name}}</li>
                   <!--<button id="Add">Add player</button>-->
+                  {{/if}}
                 {{/if}}
               {{/if}}
             {{/if}}
