@@ -1,13 +1,17 @@
 <template name="settings">
     <h2>Settings Page</h2>
-    <form class="settingsForm form-control">
-        <h3 id="ërrorP" > Please fill out all the info! </h3>
-        <div class="row col-lg-9">
-            <input type="text" id ="displayName">
+    <form class="settingsForm">
+        <div class="row col-lg-12">
+            <input type="text" id="displayName" value="{{currentUser.profile.name}}">
         </div>
         <hr>
         <div class="row">
-            {{> GenderCheck}}
+            <div class="row">
+                <form class="col-lg-12">
+                    <input type="radio" id="status-gender-1" name="gender" value="m" checked="{{equals currentUser.profile.gender 'm'}}"> Male<br>
+                    <input type="radio" id="status-gender-2" name="gender" value="f" checked="{{equals currentUser.profile.gender 'f'}}"> Female
+                </form>
+            </div>
         </div>
         <hr>
             <div class="row">
@@ -16,23 +20,23 @@
                         <span class="alert alert-success">Verified</span>
                     {{else}}
                         <span class="alert-warning">Unverified</span>
-                        <input type="text" id="summonerNameUpdate" class="col-lg-3" value="{{currentUser.summonerName}}">
+                        <input type="text" id="summonerName" class="col-lg-3" value="{{currentUser.profile.summonerName}}">
                         <button id="verifyButton" class="col-lg-2" >Verify</button>
                     {{/if}}
                 </div>
             </div>
         <hr>
         <div class="row">
-            <div class="form-group" Name="Server">
+            <div class="form-group">
                 <div class="col-sm-2">
                 <p> Pick what server you play on </p>
-                    <select id="Server" class="form-control">
-                    <option value="euw">EUW</option>
-                    <option value="na">NA</option>
-                    <option value="eune">EUNE</option>
-                    <option value="tr">TR</option>
-                    <option value="lan">LAN</option>
-                    <option value="jap">JAP</option>
+                    <select id="server" class="form-control">
+                        <option value="euw" selected="{{equals currentUser.profile.server 'euw'}}">EUW</option>
+                        <option value="na" selected="{{equals currentUser.profile.server 'na'}}">NA</option>
+                        <option value="eune" selected="{{equals currentUser.profile.server 'eune'}}">EUNE</option>
+                        <option value="tr" selected="{{equals currentUser.profile.server 'tr'}}">TR</option>
+                        <option value="lan" selected="{{equals currentUser.profile.server 'lan'}}">LAN</option>
+                        <option value="jap" selected="{{equals currentUser.profile.server 'jap'}}">JAP</option>
                     </select> 
                 </div>
             </div>
@@ -42,18 +46,23 @@
             <div class="form-group">
                 <div class="col-sm-2">
                 <p> Pick what Role you main </p>
-                    <select id="Role" class="form-control">
-                    <option value="top">TOP</option>
-                    <option value="jgl">Jungle</option>
-                    <option value="mid">Midlane</option>
-                    <option value="adc">Marksman</option>
-                    <option value="sup">Support</option>
+                    <select id="role" class="form-control">
+                        <option value="top" selected="{{equals currentUser.profile.role 'top'}}">TOP</option>
+                        <option value="jgl" selected="{{equals currentUser.profile.role 'jgl'}}">Jungle</option>
+                        <option value="mid" selected="{{equals currentUser.profile.role 'mid'}}">Midlane</option>
+                        <option value="adc" selected="{{equals currentUser.profile.role 'adc'}}">Marksman</option>
+                        <option value="sup" selected="{{equals currentUser.profile.role 'sup'}}">Support</option>
                     </select> 
                 </div>
             </div>
         </div>
         <hr>
-            {{> MicCheck }}
+            <div class="row">
+                <form class="col-lg-12">
+                    <p>Do you own a Microphone?</p>
+                    <input type="checkbox" id="microphone" checked="{{currentUser.profile.microphone}}">Yes<br>
+                </form>
+            </div>
         <hr>
         <div class="row">
             <div class="col-lg-5">
@@ -75,24 +84,5 @@
             Delete account
         </button>
     </form>
-</template>
-
-<template name="MicCheck">
-    <div class="row">
-        <form class="col-lg-12">
-            <p>Do you own a Microphone?</p>
-            <input type="radio" id="status-micro-1" name="MicroCheck" value="true" checked> Yes<br>
-            <input type="radio" id="status-micro-2" name="MicroCheck" value="false"> No
-        </form>
-    </div>
-</template>
-
-<template name="GenderCheck">
-    <div class="row">
-        <form class="col-lg-12">
-            <input type="radio" id="status-gender-1" name="GenderCheck" value="m" checked> Male<br>
-            <input type="radio" id="status-gender-2" name="GenderCheck" value="f" > Female
-        </form>
-    </div>
 </template>
 

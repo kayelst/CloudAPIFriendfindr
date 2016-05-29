@@ -14,7 +14,7 @@ if (Meteor.settings.paypal && (Meteor.settings.paypal.clientId && Meteor.setting
 
             try {
                 var result = syncMethod(card_data, {total: '2.00', currency: 'EUR'});
-                if (result.saved) Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: {premium: true}}}, {upsert: true});
+                if (result.saved) Meteor.users.update({_id: Meteor.userId()}, {$set: {'profile.premium': true}}, {upsert: true});
                 return result.saved;
             }
             catch (ex) {

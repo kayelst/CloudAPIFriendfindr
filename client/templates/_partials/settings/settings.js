@@ -3,83 +3,26 @@
  */
 
 Template.settings.helpers({
-    'radio_equals': function (x, y) {
-        return (x === y) ? {checked: 'checked'} : null;
-    }
-});
-var ChosenMic;
-var GenderString;
-
-Template.MicCheck.events({
-    'click :radio': function(event, template) {
-        var element = template.find('input:radio[name=MicroCheck]:checked');
-        console.log($(element).val());
-        var MicString = $(element).val();
-        if (Meteor.user().profile.microphone = true){
-            document.getElementById("Server")
-        }
-        if (MicString == "false"){
-            ChosenMic = false;
-        }
-        else if (MicString == "true") {
-            ChosenMic = true;
-        }
-
-    }
-});
-
-Template.GenderCheck.events({
-    'click :radio': function(event, template) {
-        var element = template.find('input:radio[name=GenderCheck]:checked');
-        console.log($(element).val());
-        GenderString = $(element).val();
-
+    'equals': function (x, y) {
+        return (x === y) ? 'true' : 'false';
     }
 });
 
 Template.settings.events({
-    'submit .settingsForm': function (event){
-        //laat submit buttton niet doen wat hij normaal doet (page refreshen, ...)
+    'submit .settingsForm': function (event, template) {
         event.preventDefault();
-        /*if(ChosenServer = null || ChosenRole == null || ChosenMic == null || GenderString == null || displayNameChosen == null){
+        var newProfile = {
+                "profile.server": server.value,
+                "profile.role": role.value,
+                "profile.microphone": microphone.checked,
+                "profile.gender": template.find('input:radio[name=gender]:checked').value,
+                "profile.name": displayName.value
+            };
 
-        }
-        else {*/
-            Meteor.call("getUpdatedServer", function () {
-                Session.get("Server");
-                Session.set("ChosenS", document.getElementById("Server").value);
-                var ChosenServer = Session.get("ChosenS");
-                console.log(ChosenServer);
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.server": ChosenServer}});
-            });
-
-            Meteor.call("getUpdatedRole", function () {
-                Session.get("Role");
-                Session.set("ChosenR", document.getElementById("Role").value);
-                var ChosenRole = Session.get("ChosenR");
-                console.log(ChosenRole);
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.role": ChosenRole}});
-            });
-
-            Meteor.call("getUpdatedMic", function () {
-                console.log("ChosenMic is " + ChosenMic);
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.microphone": ChosenMic}});
-            });
-
-            Meteor.call("getUpdatedGender", function () {
-                console.log("GenderString is " + GenderString);
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.gender": GenderString}});
-            });
-
-            Meteor.call("getSiteName", function () {
-                var displayNameChosen = document.getElementById('displayName').value;
-                Meteor.users.update(Meteor.userId(), {$set: {"profile.displayName": displayNameChosen}});
-            });
-        //}
+        Meteor.call('updateUser', newProfile);
     },
-    'click #verifyButton': function(event){
+    'click #verifyButton': function (event) {
         event.preventDefault();
-        console.log("hi")
-        Meteor.call("verifyLeagueUser", document.getElementById('summonerNameUpdate').value.toLowerCase());
+        Meteor.call("verifyLeagueUser", document.getElementById('summonerName').value.toLowerCase());
     }
 });
