@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-lg-8">
                     <span class="col-lg-2">Summoner name: </span>
-                    <input type="text" class="col-lg-3" value="{{currentUser.summonerName}}">
+                    <input type="text" name="summonerName" class="col-lg-3" value="{{currentUser.summonerName}}">
                     <button type="button" class="col-lg-1">Check</button>
                     {{#if validSummonerName}}
                         <div class="glyphicon glyphicon-ok"></div>
@@ -33,7 +33,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="form-group" Name = "Server">
+            <div class="form-group" Name="Server">
                 <div class="col-sm-2">
                 <p> Pick what server you play on </p>
                     <select id="Server" class="form-control">
@@ -90,6 +90,7 @@
 <template name="MicCheck">
     <div class="row">
         <form class="col-lg-12">
+            <p>Do you own a Microphone?</p>
             <input type="radio" id="status-micro-1" name="MicroCheck" value="true" checked> Yes<br>
             <input type="radio" id="status-micro-2" name="MicroCheck" value="false"> No
         </form>
