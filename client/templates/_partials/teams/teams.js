@@ -1,12 +1,6 @@
 Template.homeTeams.events({
-   'submit .teamsearching': function(event) {
+   'submit .Teamsearching': function(event) {
        event.preventDefault();
-       var Name = document.getElementById("Name").value;
-       Router.go('/players');
+       Meteor.call("addTeam", TeamName.value);
    }
 });
-
-Template.registerHelper('',function(){
-    return Session.get("");
-});
-

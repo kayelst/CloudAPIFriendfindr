@@ -68,6 +68,15 @@
         <button id="submit">Submit</button>
     </div>
   </form>
+  <hr>
+    Invite players to team:
+    <select id="Teams" name="Teams" class="form-control">
+      <option value="">Select team</option>
+        {{#each teams}}
+          <option value="{{teamId}}">{{teamName}}</option>
+        {{/each}}
+    </select>
+  <hr>
   <div id="list">
     <ol>
       <div class="list-group">
@@ -77,7 +86,8 @@
               {{#if microphoneCheck Microphone}}
                 {{#if serverCheck Server}}
                   {{#if roleCheck Role}}
-                  <a href="#" class="list-group-item col-lg-3">hi, {{name}}</a>
+                  <span class="list-group-item col-lg-3">{{name}} {{Language}} {{Microphone}} {{Server}} {{Role}}</span>
+
                   <!--<button id="Add">Add player</button>-->
                   {{/if}}
                 {{/if}}

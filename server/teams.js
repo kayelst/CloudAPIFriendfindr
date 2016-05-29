@@ -1,5 +1,6 @@
 Meteor.methods({
     'addTeam': function (name) {
+        console.log(name)
         Teams.insert({teamName: name, members: [Meteor.userId()], owner: Meteor.userId()}, function (err, res) {
             if (err) {
                 console.error(err);
