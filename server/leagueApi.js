@@ -12,19 +12,16 @@ if (Meteor.settings.leagueApiKey != null) {
             var syncMethod = Meteor.wrapAsync(HTTP.get);
             try {
                 var result = syncMethod("https://" + Meteor.user().profile.server + ".api.pvp.net/api/lol/" + Meteor.user().profile.server + "/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey).data;
-                var tier = syncMethod("https://" + Meteor.user().profile.server + ".api.pvp.net/api/lol/" + Meteor.user().profile.server + "/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey).data[name].tier;
+                var tier = syncMethod("https://" + Meteor.user().profile.server + ".api.pvp.net/api/lol/" + Meteor.user().profile.server + "/v2.5/league/by-summoner/" + result[name].id + "/entry?api_key=" + Meteor.settings.leagueApiKey).data[result[name].id][0].tier;
 
-                console.log(tier);
                 console.log(result);
+                console.log(tier);
 
                 Meteor.users.update(Meteor.userId(), {
                     $set: {
-                        profile: {
-                            summonerID: result[name].id,
-                            summonerName: result[name].name,
-                            tier: tier,
-                            verified: true
-                        }
+                        "profile.summonerName": result[name].name,
+                        "profile.tier": tier,
+                        "profile.verified": true
                     }
                 }, function (err, res) {
                     console.error(err);
