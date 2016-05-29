@@ -1,4 +1,4 @@
-if (Meteor.settings.paypal.clientId != null && Meteor.settings.paypal.secret != null) {
+if (Meteor.settings.paypal && (Meteor.settings.paypal.clientId && Meteor.settings.paypal.secret)) {
     console.log("Using Paypal settings:\nClientId: " + Meteor.settings.paypal.clientId + "\nSecret: " + Meteor.settings.paypal.secret);
 
     Meteor.Paypal.config({
