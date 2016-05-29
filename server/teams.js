@@ -8,17 +8,17 @@ Meteor.methods({
                 return false
             }
             return res == 1;
+            console.log("qdded" + teamName);
         });
     },
     'removeTeam': function (id) {
-        if (!id) return false;
-
-        Teams.delete({_id: id}, function (err, res) {
+        Teams.remove({_id: id}, function (err, res) {
             if (err) {
                 console.error(err);
                 return false
             }
             return res == 1;
+            console.log("deleted" + id);
         });
     },
     'invitePlayer': function (teamId, playerId) {

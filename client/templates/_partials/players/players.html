@@ -1,82 +1,44 @@
-<!--<template name="homePlayers">
-  <form class="Playersearching" id="playerform">
-    <div id="placeholdersTeam col-lg-12">
-      <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
-      <input type="text" class="col-lg-2 col-lg-offset-1" name="Language" id="Language" placeholder="Language">
-      <div class="col-lg-2 col-lg-offset-1">
-        Microphone <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
-      </div>
-    </div>
-    <div class="form-group" id="choicebox">
-      <div class="col-sm-2">
-        Server: <select id="Server" name="Server" class="form-control">
-          <option value="">select server</option>
-          <option value="EUW">EUW</option>
-          <option value="NA">NA</option>
-          <option value="EUNE">EUNE</option>
-          <option value="TR">TR</option>
-          <option value="LAN">LAN</option>
-          <option value="JAP">JAP</option>
-        </select> 
-      </div>
-    <button id="submit">Submit</button>
-    </div>
-  </form>
-  <div id="list">
-    <ol>
-      <ul class="list-group">
-        {{#each players}}
-          {{#if nameCheck name}}
-            {{#if languageCheck Language}}
-              {{#if microphoneCheck Microphone}}
-                {{#if serverCheck Server}}
-                  <li class="list-group-item col-lg-1" >hi, {{name}}</li>
-                  <button id="Add">Add player</button>
-                {{/if}}
-              {{/if}}
-            {{/if}}
-          {{/if}}
-        {{/each}}
-      </ul>
-    </ol>
-  </div>
-</template>-->
-
 <template name="homePlayers">
   <form class="Playersearching" id="playerform">
     <div class="searching">
         <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
-        <input type="text" class="col-lg-2 col-lg-offset-1" name="Language" id="Language" placeholder="Language">
-          Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
+        <select id="Language" name="Language" class="form-control">
+            <option value="">Select language</option>
+            <option value="English">English</option>
+            <option value="Dutch">Dutch</option>
+            <option value="German">German</option>
+            <option value="Spanish">Spanish</option>
+          </select>
           <select id="Server" name="Server" class="form-control">
             <option value="">Select server</option>
-            <option value="EUW">EUW</option>
-            <option value="NA">NA</option>
-            <option value="EUNE">EUNE</option>
-            <option value="TR">TR</option>
-            <option value="LAN">LAN</option>
-            <option value="JAP">JAP</option>
+            <option value="euw">EUW</option>
+            <option value="na">NA</option>
+            <option value="eune">EUNE</option>
+            <option value="tr">TR</option>
+            <option value="lan">LAN</option>
+            <option value="jap">JAP</option>
           </select>
           <select id="Role" name="Role" class="form-control">
             <option value="">Select role</option>
-            <option value="TOP">TOP</option>
-            <option value="JGL">Jungle</option>
-            <option value="MID">Midlane</option>
-            <option value="ADC">Marksman</option>
-            <option value="SUP">Support</option>
+            <option value="top">TOP</option>
+            <option value="jgl">Jungle</option>
+            <option value="mid">Midlane</option>
+            <option value="adc">Marksman</option>
+            <option value="sup">Support</option>
           </select> 
+          Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
         <button id="submit">Submit</button>
     </div>
-  </form>
   <hr>
     Invite players to team:
     <select id="Teams" name="Teams" class="form-control">
       <option value="">Select team</option>
         {{#each teams}}
-          <option value="{{teamId}}">{{teamName}}</option>
+          <option value="{{teamId}}">{{TeamName}}</option>
         {{/each}}
     </select>
   <hr>
+  </form>
   <div id="list">
     <ol>
       <div class="list-group">
@@ -86,9 +48,16 @@
               {{#if microphoneCheck Microphone}}
                 {{#if serverCheck Server}}
                   {{#if roleCheck Role}}
-                  <span class="list-group-item col-lg-3">{{name}} {{Language}} {{Microphone}} {{Server}} {{Role}}</span>
-
-                  <!--<button id="Add">Add player</button>-->
+                  <div class="playerInfo">
+                  <span class="list-group-item col-lg-3">{{name}}</span>
+                    <div class="dropdown-content">
+                      <p>Language: {{Language}}</p>
+                      <p>Microphone: {{Microphone}} </p>
+                      <p>Server: {{Server}}</p>
+                      <p>Role: {{Role}}</p>
+                      <button id="add">add player</button>
+                    </div>
+                  </div>
                   {{/if}}
                 {{/if}}
               {{/if}}
