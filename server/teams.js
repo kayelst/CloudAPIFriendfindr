@@ -41,7 +41,16 @@ Meteor.methods({
                 console.error(err);
                 return false
             }
-            return res == 1;
+            if (res == 1) {
+                Teams.updateOne({_id: teamId}, { $addToSet: { members: playerId }}, function (err, res) {
+                    if (err) {
+                        console.error(err);
+                        return false
+                    }
+                    return res == 1;
+                });
+            }
         });
+
     }
 });
