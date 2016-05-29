@@ -33,8 +33,8 @@
     Invite players to team:
     <select id="Teams" name="Teams" class="form-control">
       <option value="">Select team</option>
-        {{#each teams}}
-          <option value="{{teamId}}">{{TeamName}}</option>
+        {{#each teamsOwned}}
+          <option value="{{teamId}}">{{teamName}}</option>
         {{/each}}
     </select>
   <hr>

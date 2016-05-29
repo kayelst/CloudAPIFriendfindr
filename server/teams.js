@@ -8,7 +8,6 @@ Meteor.methods({
                 return false
             }
             return res == 1;
-            console.log("qdded" + teamName);
         });
     },
     'removeTeam': function (id) {
@@ -20,7 +19,6 @@ Meteor.methods({
                 return false
             }
             return res == 1;
-            console.log("deleted" + id);
         });
     },
     'invitePlayer': function (teamId, playerId) {
