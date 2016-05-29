@@ -111,3 +111,7 @@ input[type=submit] {
     margin-top: -20em;
     width: 30%;
 }
+
+.indexForm {
+    width: 25%;
+}
