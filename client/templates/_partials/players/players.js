@@ -8,7 +8,6 @@ Template.homePlayers.helpers({
 Template.homePlayers.helpers({
   'microphoneCheck': function (value) {
     if (value == undefined || Session.get("Microphone") == undefined) return true;
-    console.log(Session.get("Microphone") + " | "  + value + " : " + (value == Session.get("Microphone")));
     return value == Session.get("Microphone");
   }
 });
@@ -50,8 +49,14 @@ Template.homePlayers.events({
         event.preventDefault();
         teamId = document.getElementById('Teams').value;
         playerId = event.currentTarget.attributes["data-id"].value;
+        if (!teamId || !playerId) return false;
         Meteor.call("invitePlayer", teamId, playerId);
     }
 });
 
 
+Template.homePlayers.helpers({
+  'equalsToMe': function (value){
+      return value != Meteor.userId();
+  }
+})

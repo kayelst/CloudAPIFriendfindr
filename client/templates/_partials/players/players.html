@@ -44,19 +44,19 @@
     <ol>
       <div class="list-group">
         {{#each players}}
-          {{#if nameCheck profile.name}}
+          {{#if nameCheck profile.summonerName}}
             {{#if languageCheck profile.language}}
               {{#if microphoneCheck profile.microphone}}
                 {{#if serverCheck profile.server}}
                   {{#if roleCheck profile.role}}
                   <div class="playerInfo">
-                  <span class="list-group-item col-lg-3">{{profile.name}}</span>
+                  <span class="list-group-item col-lg-3">{{profile.summonerName}}</span>
                     <div class="dropdown-content">
                       <p>Language: {{profile.language}}</p>
                       <p>Microphone: <input type="checkbox" checked="{{profile.microphone}}" disabled readonly /></p>
                       <p>Server: {{profile.server}}</p>
                       <p>Role: {{profile.role}}</p>
-                      <button id="add">add player</button>
+                      {{#if equalsToMe _id}}<button id="add">Add player to selected team</button>{{/if}}
                     </div>
                   </div>
                   {{/if}}
