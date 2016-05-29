@@ -1,18 +1,16 @@
-JsonRoutes.add("get", "/api/players", function (req, res, next) {
+JsonRoutes.add("get", "/api/players", function (req, res) {
     JsonRoutes.sendResult(res, {
         data: Meteor.users.find({}, { fields: {profile: true}}).fetch()
     });
 });
 
-JsonRoutes.add("get", "/api/players/premium", function (req, res, next) {
-    var name = req.params.name;
-
+JsonRoutes.add("get", "/api/players/premium", function (req, res) {
     JsonRoutes.sendResult(res, {
         data: Meteor.users.find({profile: {premium: true}}, { fields: {profile: true}}).fetch()
     });
 });
 
-JsonRoutes.add("get", "/api/players/:name", function (req, res, next) {
+JsonRoutes.add("get", "/api/players/:name", function (req, res) {
     var name = req.params.name;
 
     JsonRoutes.sendResult(res, {
@@ -20,13 +18,13 @@ JsonRoutes.add("get", "/api/players/:name", function (req, res, next) {
     });
 });
 
-JsonRoutes.add("get", "/api/teams", function (req, res, next) {
+JsonRoutes.add("get", "/api/teams", function (req, res) {
     JsonRoutes.sendResult(res, {
         data: Teams.find().fetch()
     });
 });
 
-JsonRoutes.add("get", "/api/teams/:name", function (req, res, next) {
+JsonRoutes.add("get", "/api/teams/:name", function (req, res) {
     var name = req.params.name;
 
     JsonRoutes.sendResult(res, {
@@ -34,15 +32,13 @@ JsonRoutes.add("get", "/api/teams/:name", function (req, res, next) {
     });
 });
 
-JsonRoutes.add("get", "/api/invites", function (req, res, next) {
-    var id = req.params.id;
-
+JsonRoutes.add("get", "/api/invites", function (req, res) {
     JsonRoutes.sendResult(res, {
         data: Invites.find().fetch()
     });
 });
 
-JsonRoutes.add("get", "/api/invites/team/:id", function (req, res, next) {
+JsonRoutes.add("get", "/api/invites/team/:id", function (req, res) {
     var id = req.params.id;
 
     JsonRoutes.sendResult(res, {
@@ -50,7 +46,7 @@ JsonRoutes.add("get", "/api/invites/team/:id", function (req, res, next) {
     });
 });
 
-JsonRoutes.add("get", "/api/invites/player/:id", function (req, res, next) {
+JsonRoutes.add("get", "/api/invites/player/:id", function (req, res) {
     var id = req.params.id;
 
     JsonRoutes.sendResult(res, {
@@ -58,7 +54,7 @@ JsonRoutes.add("get", "/api/invites/player/:id", function (req, res, next) {
     });
 });
 
-JsonRoutes.add("post", "/api/invites", function (req, res, next) {
+JsonRoutes.add("post", "/api/invites", function (req, res) {
     var body = req.body;
 
     if (!body || !body.teamId || !body.playerId) {
@@ -83,7 +79,7 @@ JsonRoutes.add("post", "/api/invites", function (req, res, next) {
     });
 });
 
-JsonRoutes.add("delete", "/api/invites", function (req, res, next) {
+JsonRoutes.add("delete", "/api/invites", function (req, res) {
     var body = req.body;
 
     if (!body || !body.id) {

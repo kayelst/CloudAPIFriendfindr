@@ -1,72 +1,78 @@
 <template name="homePlayers">
-  <form class="Playersearching" id="playerform">
-    <div class="searching">
-        <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
-        <select id="Language" name="Language" class="form-control">
-            <option value="">Select language</option>
-            <option value="English">English</option>
-            <option value="Dutch">Dutch</option>
-            <option value="German">German</option>
-            <option value="Spanish">Spanish</option>
-          </select>
-          <select id="Server" name="Server" class="form-control">
-            <option value="">Select server</option>
-            <option value="euw">EUW</option>
-            <option value="na">NA</option>
-            <option value="eune">EUNE</option>
-            <option value="tr">TR</option>
-            <option value="lan">LAN</option>
-            <option value="jap">JAP</option>
-          </select>
-          <select id="Role" name="Role" class="form-control">
-            <option value="">Select role</option>
-            <option value="top">TOP</option>
-            <option value="jgl">Jungle</option>
-            <option value="mid">Midlane</option>
-            <option value="adc">Marksman</option>
-            <option value="sup">Support</option>
-          </select> 
-          Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
-        <button id="submit">Submit</button>
-    </div>
-  <hr>
-    Invite players to team:
-    <select id="Teams" name="Teams" class="form-control">
-      <option value="">Select team</option>
-        {{#each teamsOwned}}
-          <option value="{{_id}}">{{teamName}}</option>
-        {{/each}}
-    </select>
-  <hr>
-  </form>
-  <form class="listPlayers">
-  <div id="list">
-    <ol>
-      <div class="list-group">
-        {{#each players}}
-          {{#if nameCheck profile.summonerName}}
-            {{#if languageCheck profile.language}}
-              {{#if microphoneCheck profile.microphone}}
-                {{#if serverCheck profile.server}}
-                  {{#if roleCheck profile.role}}
-                  <div class="playerInfo">
-                  <span class="list-group-item col-lg-3">{{profile.summonerName}}</span>
-                    <div class="dropdown-content">
-                      <p>Language: {{profile.language}}</p>
-                      <p>Microphone: <input type="checkbox" checked="{{profile.microphone}}" disabled readonly /></p>
-                      <p>Server: {{profile.server}}</p>
-                      <p>Role: {{profile.role}}</p>
-                      {{#if equalsToMe _id}}<button id="add">Add player to selected team</button>{{/if}}
-                    </div>
-                  </div>
-                  {{/if}}
-                {{/if}}
-              {{/if}}
-            {{/if}}
-          {{/if}}
-        {{/each}}
-      </div>
-    </ol>
-  </div>
-  </form>
+    <form class="Playersearching" id="playerform">
+        <div class="searching">
+            <input type="text" class="col-lg-2" name="Name" id="Name" placeholder="Name">
+            <select id="Language" name="Language" class="form-control">
+                <option value="">Select language</option>
+                <option value="English">English</option>
+                <option value="Dutch">Dutch</option>
+                <option value="German">German</option>
+                <option value="Spanish">Spanish</option>
+            </select>
+            <select id="Server" name="Server" class="form-control">
+                <option value="">Select server</option>
+                <option value="euw">EUW</option>
+                <option value="na">NA</option>
+                <option value="eune">EUNE</option>
+                <option value="tr">TR</option>
+                <option value="lan">LAN</option>
+                <option value="jap">JAP</option>
+            </select>
+            <select id="Role" name="Role" class="form-control">
+                <option value="">Select role</option>
+                <option value="top">TOP</option>
+                <option value="jgl">Jungle</option>
+                <option value="mid">Midlane</option>
+                <option value="adc">Marksman</option>
+                <option value="sup">Support</option>
+            </select>
+            Microphone: <input type="checkbox" name="Microphone" id="Microphone" checked="true"/>
+            <button id="submit">Submit</button>
+        </div>
+        <hr>
+        Invite players to team:
+        <select id="Teams" name="Teams" class="form-control">
+            <option value="">Select team</option>
+            {{#each teamsOwned}}
+                <option value="{{_id}}">{{teamName}}</option>
+            {{/each}}
+        </select>
+        <hr>
+    </form>
+    <form class="listPlayers">
+        <div id="list">
+            <ol>
+                <div class="list-group">
+                    {{#each players}}
+                        {{#if nameCheck profile.summonerName}}
+                            {{#if languageCheck profile.language}}
+                                {{#if microphoneCheck profile.microphone}}
+                                    {{#if serverCheck profile.server}}
+                                        {{#if roleCheck profile.role}}
+                                            <div class="playerInfo">
+                                                <span class="list-group-item col-lg-3">{{profile.summonerName}}</span>
+                                                <div class="dropdown-content">
+                                                    <p>Language: {{profile.language}}</p>
+                                                    <p>Microphone: <input type="checkbox"
+                                                                          checked="{{profile.microphone}}" disabled
+                                                                          readonly/></p>
+                                                    <p>Server: {{profile.server}}</p>
+                                                    <p>Role: {{profile.role}}</p>
+                                                    {{#if equalsToMe _id}}
+                                                        <button type="button" class="add" data-id="{{_id}}">Add player
+                                                            to selected team
+                                                        </button>
+                                                    {{/if}}
+                                                </div>
+                                            </div>
+                                        {{/if}}
+                                    {{/if}}
+                                {{/if}}
+                            {{/if}}
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </ol>
+        </div>
+    </form>
 </template>
