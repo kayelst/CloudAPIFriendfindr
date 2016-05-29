@@ -1,13 +1,15 @@
 <template name="settings">
     <h2>Settings Page</h2>
     <form class="settingsForm">
-        <div class="row col-lg-12">
-            <input type="text" id="displayName" value="{{currentUser.profile.name}}">
-        </div>
-        <hr>
         <div class="row">
-            <div class="row">
-                <form class="col-lg-12">
+            <div class="col-lg-12">
+                <input type="text" id="displayName" value="{{currentUser.profile.name}}">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form>
                     <input type="radio" id="status-gender-1" name="gender" value="m" checked="{{equals currentUser.profile.gender 'm'}}"> Male<br>
                     <input type="radio" id="status-gender-2" name="gender" value="f" checked="{{equals currentUser.profile.gender 'f'}}"> Female
                 </form>
