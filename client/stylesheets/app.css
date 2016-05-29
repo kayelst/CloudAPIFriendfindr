@@ -91,7 +91,7 @@ input[type=submit] {
 
 .list-group {
     margin: auto;
-    width: 30%;
+    width: 200%;
 }
 
 .indexForm {
@@ -111,5 +111,6 @@ input[type=submit] {
 .listPlayers {
     float: left;
     clear: right;
+    margin-left: 25em;
 }
 
