@@ -4,7 +4,7 @@
 
 Template.settings.helpers({
     'equals': function (x, y) {
-        return (x === y) ? 'true' : 'false';
+        return x === y;
     }
 });
 

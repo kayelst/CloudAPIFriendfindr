@@ -7,7 +7,7 @@ Template.homeIndex.events({
 		Meteor.call('removeTeam', event.currentTarget.attributes["data-id"].value);
 		return true;
 	}
-})
+});
 
 Template.homeIndex.helpers({
   'getSummonerName': function (value) {

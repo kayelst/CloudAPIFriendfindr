@@ -21,7 +21,6 @@ if (Meteor.settings.paypal && (Meteor.settings.paypal.clientId && Meteor.setting
                 console.error(ex);
                 return false;
             }
-            return true;
         }
     })
 }

@@ -5,13 +5,13 @@
 Accounts.ui.config({
     requestPermissions: {},
     extraSignupFields: [{
-        fieldName: 'displayName',
+        fieldName: 'name',
         fieldLabel: 'Display Name',
         inputType: 'text',
         visible: true,
         validate: function (value, errorFunction) {
             if (!value) {
-                errorFunction("Please write your username");
+                errorFunction("Please write your display name");
                 return false;
             } else {
                 return true;
