@@ -12,6 +12,8 @@ Meteor.methods({
         });
     },
     'removeTeam': function (id) {
+        if (!id) return false;
+
         Teams.remove({_id: id}, function (err, res) {
             if (err) {
                 console.error(err);
