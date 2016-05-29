@@ -6,19 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="af8a33f2-cc30-43b5-a383-43c63ced7fc3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/templates/_partials/sidebar/teamColumn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/templates/_partials/sidebar/teamColumnItem.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/scripts/register-setup.js" afterPath="$PROJECT_DIR$/client/scripts/register-setup.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/stylesheets/app.css" afterPath="$PROJECT_DIR$/client/stylesheets/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/_partials/players/players.html" afterPath="$PROJECT_DIR$/client/templates/_partials/players/players.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/_partials/players/players.js" afterPath="$PROJECT_DIR$/client/templates/_partials/players/players.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/_partials/settings/settings.js" afterPath="$PROJECT_DIR$/client/templates/_partials/settings/settings.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/home/index.js" afterPath="$PROJECT_DIR$/client/templates/home/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/routes.js" afterPath="$PROJECT_DIR$/lib/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/leagueApi.js" afterPath="$PROJECT_DIR$/server/leagueApi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/paypal.js" afterPath="$PROJECT_DIR$/server/paypal.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/restAPI.js" afterPath="$PROJECT_DIR$/server/restAPI.js" />
     </list>
     <ignored path="LoLFinder.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,7 +74,6 @@
         <option value="$PROJECT_DIR$/client/templates/home/index.html" />
         <option value="$PROJECT_DIR$/client/templates/_partials/nav.html" />
         <option value="$PROJECT_DIR$/client/templates/_partials/Invites/invites.html" />
-        <option value="$PROJECT_DIR$/client/templates/_partials/settings/settings.html" />
         <option value="$PROJECT_DIR$/server/zzzzzz.js" />
         <option value="$PROJECT_DIR$/client/templates/_partials/settings/settings.js" />
         <option value="$PROJECT_DIR$/client/scripts/register-setup.js" />
@@ -98,6 +85,7 @@
         <option value="$PROJECT_DIR$/server/paypal.js" />
         <option value="$PROJECT_DIR$/server/restAPI.js" />
         <option value="$PROJECT_DIR$/server/leagueApi.js" />
+        <option value="$PROJECT_DIR$/client/templates/_partials/settings/settings.html" />
       </list>
     </option>
   </component>
@@ -220,6 +208,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="_partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LoLFinder" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cloud APIs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="settings" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,12 +424,12 @@
       <workItem from="1464523857681" duration="5009000" />
       <workItem from="1464534982843" duration="6121000" />
       <workItem from="1464547339420" duration="87000" />
-      <workItem from="1464550960447" duration="11530000" />
+      <workItem from="1464550960447" duration="13156000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73742000" />
+    <option name="totallyTimeSpent" value="75368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -770,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/_partials/settings/settings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="82" column="33" selection-start-line="82" selection-start-column="33" selection-end-line="82" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/_partials/players/players.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="667">
@@ -818,14 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/restAPI.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/leagueApi.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -846,6 +844,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/restAPI.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="3" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/_partials/settings/settings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="105" column="14" selection-start-line="105" selection-start-column="14" selection-end-line="105" selection-end-column="14" />
           <folding />
         </state>
       </provider>
