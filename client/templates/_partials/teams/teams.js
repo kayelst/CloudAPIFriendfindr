@@ -5,10 +5,5 @@ Template.homeTeams.events({
    }
 });
 
-Template.homeTeams.events({
-   'add .Playersearching': function(event) {
-       event.preventDefault();
-       Meteor.call("invitePlayer", teamId, playerId);
-   }
-});
+
 

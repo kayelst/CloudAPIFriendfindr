@@ -43,18 +43,18 @@
     <ol>
       <div class="list-group">
         {{#each players}}
-          {{#if nameCheck name}}
-            {{#if languageCheck Language}}
-              {{#if microphoneCheck Microphone}}
-                {{#if serverCheck Server}}
-                  {{#if roleCheck Role}}
+          {{#if nameCheck profile.name}}
+            {{#if languageCheck profile.language}}
+              {{#if microphoneCheck profile.microphone}}
+                {{#if serverCheck profile.server}}
+                  {{#if roleCheck profile.role}}
                   <div class="playerInfo">
-                  <span class="list-group-item col-lg-3">{{name}}</span>
+                  <span class="list-group-item col-lg-3">{{profile.name}}</span>
                     <div class="dropdown-content">
-                      <p>Language: {{Language}}</p>
-                      <p>Microphone: {{Microphone}} </p>
-                      <p>Server: {{Server}}</p>
-                      <p>Role: {{Role}}</p>
+                      <p>Language: {{profile.language}}</p>
+                      <p>Microphone: <input type="checkbox" checked="{{profile.microphone}}" disabled readonly /></p>
+                      <p>Server: {{profile.server}}</p>
+                      <p>Role: {{profile.role}}</p>
                       <button id="add">add player</button>
                     </div>
                   </div>
