@@ -41,31 +41,41 @@ Template.settings.events({
     'submit .settingsForm': function (event){
         //laat submit buttton niet doen wat hij normaal doet (page refreshen, ...)
         event.preventDefault();
-        Meteor.call("getUpdatedServer", function() {
-            Session.get("Server");
-            Session.set("ChosenS", document.getElementById("Server").value);
-            var ChosenServer = Session.get("ChosenS");
-            console.log(ChosenServer);
-            Meteor.users.update(Meteor.userId(), {$set: {"profile.server": ChosenServer}});
-        });
+        /*if(ChosenServer = null || ChosenRole == null || ChosenMic == null || GenderString == null || displayNameChosen == null){
 
-       Meteor.call("getUpdatedRole", function() {
-            Session.get("Role");
-            Session.set("ChosenR", document.getElementById("Role").value);
-            var ChosenRole = Session.get("ChosenR");
-            console.log(ChosenRole);
-            Meteor.users.update(Meteor.userId(), {$set: {"profile.role": ChosenRole}});
-        });
-        
-       Meteor.call("getUpdatedMic", function(){
-           console.log("ChosenMic is " + ChosenMic);
-           Meteor.users.update(Meteor.userId(), {$set: {"profile.microphone": ChosenMic}});
-        });
+        }
+        else {*/
+            Meteor.call("getUpdatedServer", function () {
+                Session.get("Server");
+                Session.set("ChosenS", document.getElementById("Server").value);
+                var ChosenServer = Session.get("ChosenS");
+                console.log(ChosenServer);
+                Meteor.users.update(Meteor.userId(), {$set: {"profile.server": ChosenServer}});
+            });
 
-        Meteor.call("getUpdatedGender", function(){
-            console.log("GenderString is " + GenderString);
-            Meteor.users.update(Meteor.userId(), {$set: {"profile.gender": GenderString}});
-        });
+            Meteor.call("getUpdatedRole", function () {
+                Session.get("Role");
+                Session.set("ChosenR", document.getElementById("Role").value);
+                var ChosenRole = Session.get("ChosenR");
+                console.log(ChosenRole);
+                Meteor.users.update(Meteor.userId(), {$set: {"profile.role": ChosenRole}});
+            });
+
+            Meteor.call("getUpdatedMic", function () {
+                console.log("ChosenMic is " + ChosenMic);
+                Meteor.users.update(Meteor.userId(), {$set: {"profile.microphone": ChosenMic}});
+            });
+
+            Meteor.call("getUpdatedGender", function () {
+                console.log("GenderString is " + GenderString);
+                Meteor.users.update(Meteor.userId(), {$set: {"profile.gender": GenderString}});
+            });
+
+            Meteor.call("getSiteName", function () {
+                var displayNameChosen = document.getElementById('displayName').value;
+                Meteor.users.update(Meteor.userId(), {$set: {"profile.displayName": displayNameChosen}});
+            });
+        //}
     },
     'click #verifyButton': function(event){
         event.preventDefault();
