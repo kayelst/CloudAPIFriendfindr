@@ -66,32 +66,10 @@ Template.settings.events({
             console.log("GenderString is " + GenderString);
             Meteor.users.update(Meteor.userId(), {$set: {"profile.gender": GenderString}});
         });
-    }
-});
-
-Template.settings.events({
-    'click :Button': function(event){
+    },
+    'click #verifyButton': function(event){
         event.preventDefault();
-        console.log("Checking");
-        Session.set("validSummonerName", false);
-        Meteor.call("isValidSummonerName", event.target.summonerName.value.toLowerCase(), function (error, result) {
-            console.log(summonerName);
-            if (result){
-                Session.set("validSummonerName", true);
-            }
-            else Session.set("validSummonerName", false);
-        });
-
-        Meteor.call("getSummonerIDByName", event.target.summonerName.value.toLowerCase(), function(error, result) {
-            console.log("went in function");
-            if (error){
-                console.log("Error getting summoner ID");
-            }
-            else {
-                console.log("Succes!" + result);
-                Meteor.user.update(Meteor.userId(), {$set: {"profile.summoner-name": summonerName}});
-                Meteor.user.update(Meteor.userId(), {$set: {"profile.summoner-id": result}});
-            }
-        });
+        console.log("hi")
+        Meteor.call("verifyLeagueUser", document.getElementById('summonerNameUpdate').value.toLowerCase());
     }
 });

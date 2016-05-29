@@ -6,43 +6,32 @@
         </div>
         <hr>
         <div class="row">
-            {{> GenderCheck }}
+            {{> GenderCheck}}
         </div>
         <hr>
-        <div class="row">
-            <div class="row">
-                <div class="col-lg-8">
-                    <span class="col-lg-2">Summoner name: </span>
-                    <input type="text" name="summonerName" class="col-lg-3" value="{{currentUser.summonerName}}">
-                    <button type="button" class="col-lg-1">Check</button>
-                    {{#if validSummonerName}}
-                        <div class="glyphicon glyphicon-ok"></div>
-                    {{/if}}
-                </div>
-            </div>
             <div class="row">
                 <div class="col-lg-5">
-                    {{#if currentUser.verified}}
+                    {{#if currentUser.profile.verified}}
                         <span class="alert alert-success">Verified</span>
                     {{else}}
                         <span class="alert-warning">Unverified</span>
-                        <button class="col-lg-2">Verify</button>
+                        <input type="text" id="summonerNameUpdate" class="col-lg-3" value="{{currentUser.summonerName}}">
+                        <button id="verifyButton" class="col-lg-2" >Verify</button>
                     {{/if}}
                 </div>
             </div>
-        </div>
         <hr>
         <div class="row">
             <div class="form-group" Name="Server">
                 <div class="col-sm-2">
                 <p> Pick what server you play on </p>
                     <select id="Server" class="form-control">
-                    <option value="EUW">EUW</option>
-                    <option value="NA">NA</option>
-                    <option value="EUNE">EUNE</option>
-                    <option value="TR">TR</option>
-                    <option value="LAN">LAN</option>
-                    <option value="JAP">JAP</option>
+                    <option value="euw">EUW</option>
+                    <option value="na">NA</option>
+                    <option value="eune">EUNE</option>
+                    <option value="tr">TR</option>
+                    <option value="lan">LAN</option>
+                    <option value="jap">JAP</option>
                     </select> 
                 </div>
             </div>
@@ -53,11 +42,11 @@
                 <div class="col-sm-2">
                 <p> Pick what Role you main </p>
                     <select id="Role" class="form-control">
-                    <option value="TOP">TOP</option>
-                    <option value="JGL">Jungle</option>
-                    <option value="MID">Midlane</option>
-                    <option value="ADC">Marksman</option>
-                    <option value="SUP">Support</option>
+                    <option value="top">TOP</option>
+                    <option value="jgl">Jungle</option>
+                    <option value="mid">Midlane</option>
+                    <option value="adc">Marksman</option>
+                    <option value="sup">Support</option>
                     </select> 
                 </div>
             </div>
@@ -105,3 +94,4 @@
         </form>
     </div>
 </template>
+

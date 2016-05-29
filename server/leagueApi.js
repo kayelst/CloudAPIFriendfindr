@@ -7,29 +7,27 @@ if (Meteor.settings.leagueApiKey != null) {
     console.log("\nUsing League API key: " + Meteor.settings.leagueApiKey);
 
     Meteor.methods({
-        'getTierByID': function (id) {
-            this.unblock();
-            return HTTP.get("https://euw.api.pvp.net/api/lol/euw/v2.5/league-by-summoner/" + id + "/entry?api_key=" + Meteor.settings.leagueApiKey).data;
-        },
-        'getTierBySummonerName': function (name) {
-            this.unblock();
-            return HTTP.get("https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey).data[name].id;
-        },
-        'isValidSummonerName': function (name) {
+        'verifyLeagueUser': function (name) {
             this.unblock();
             var syncMethod = Meteor.wrapAsync(HTTP.get);
             try {
-                var result = syncMethod("https://euw.api.pvp.net/api/lol/euw/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey);
+                var result = syncMethod("https://"+ Meteor.user().profile.server +".api.pvp.net/api/lol/" + Meteor.user().profile.server + "/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey).data;
+                var tier = syncMethod("https://"+ Meteor.user().profile.server +".api.pvp.net/api/lol/"+ Meteor.user().profile.server +"/v1.4/summoner/by-name/" + name + "?api_key=" + Meteor.settings.leagueApiKey).data[name].tier;
+
+                console.log(tier);
+                console.log(result);
+
+                Meteor.users.update(Meteor.userId(), {$set: {profile: { summonerID: result[name].id, summonerName: result[name].name, tier: tier, verified: true }}}, function(err, res) {
+                    console.error(err);
+                    console.log(res);
+                });
+
                 return true;
             }
             catch (ex) {
+                console.error(ex);
                 return false;
             }
-        },
-        'getSummonerIDByName': function (name) {
-            //Kan dan nog meerdere dingen doen tijdens de call, zodat als deze delayed is dat de website nog wel werkt.
-            this.unblock();
-            return HTTP.get("https://euw.api.pvp.net/api/lol/EUW/v1.4/summoner/by-name/" + name + "?api_key="+ Meteor.settings.leagueApiKey).data[name].id;
         }
     });
 }
