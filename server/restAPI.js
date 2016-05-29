@@ -1,6 +1,6 @@
 JsonRoutes.add("get", "/api/players", function (req, res, next) {
     JsonRoutes.sendResult(res, {
-        data: Meteor.users.find({}, {profile: 1}).fetch()
+        data: Meteor.users.find({}, { fields: {profile: true}}).fetch()
     });
 });
 
@@ -8,7 +8,7 @@ JsonRoutes.add("get", "/api/players/premium", function (req, res, next) {
     var name = req.params.name;
 
     JsonRoutes.sendResult(res, {
-        data: Meteor.users.find({profile: {premium: true}}, {profile: 1}).fetch()
+        data: Meteor.users.find({profile: {premium: true}}, { fields: {profile: true}}).fetch()
     });
 });
 
@@ -16,7 +16,7 @@ JsonRoutes.add("get", "/api/players/:name", function (req, res, next) {
     var name = req.params.name;
 
     JsonRoutes.sendResult(res, {
-        data: Meteor.users.find({profile: {summonerName: name}}, {profile: 1}).fetch()
+        data: Meteor.users.find({profile: {summonerName: name}}, { fields: { profile: true}}).fetch()
     });
 });
 
