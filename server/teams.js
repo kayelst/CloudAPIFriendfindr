@@ -1,17 +1,47 @@
 Meteor.methods({
     'addTeam': function (name) {
-        Teams.insert({teamName: name, members: [Meteor.userId()], owner: Meteor.userId()})
+        Teams.insert({teamName: name, members: [Meteor.userId()], owner: Meteor.userId()}, function (err, res) {
+            if (err) {
+                console.error(err);
+                return false
+            }
+            return res == 1;
+        });
     },
     'removeTeam': function (id) {
-        Teams.delete({_id: id});
+        Teams.delete({_id: id}, function (err, res) {
+            if (err) {
+                console.error(err);
+                return false
+            }
+            return res == 1;
+        });
     },
     'invitePlayer': function (teamId, playerId) {
-        Invites.insert({teamId: teamId, playerId: playerId, status: 'pending'});
+        Invites.insert({teamId: teamId, playerId: playerId, status: 'pending'}, function (err, res) {
+            if (err) {
+                console.error(err);
+                return false
+            }
+            return res == 1;
+        });
     },
     'cancelInvite': function (teamId, playerId) {
-        Invites.update({teamId: teamId, playerId: playerId},{ $set: { status: 'cancelled'}});
+        Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'cancelled'}}, function (err, res) {
+            if (err) {
+                console.error(err);
+                return false
+            }
+            return res == 1;
+        });
     },
     'acceptInvite': function (teamId, playerId) {
-        Invites.update({teamId: teamId, playerId: playerId},{ $set: { status: 'accepted'}});
+        Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'accepted'}}, function (err, res) {
+            if (err) {
+                console.error(err);
+                return false
+            }
+            return res == 1;
+        });
     }
 });
