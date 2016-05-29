@@ -1,37 +1,39 @@
 <template name="homeIndex">
-    <h2>Index</h2>
-    <div class="indexForm">
-        <div class="col-lg-12">
-            <span>Teams not owned:</span><br>
-            {{#each teamsNotOwned}}
-                <span>{{teamName}}</span>
-                <br>
-                <ul>
-                    {{#each members}}
-                        <li>Site name: {{getSiteName this}}</li>
-                        <li>League name: {{getSummonerName this}}</li>
-                    {{/each}}
-                </ul>
+    <form class="indexForm">
+        <h2>Index</h2>
+            <div class="col-lg-12">
+                <h3>Teams not owned:</h3>
                 <hr>
-            {{/each}}
-        </div>
-        <hr>
-        <hr>
-        <div class="col-lg-12">
-            <span>Teams owned by you:</span><br>
-            {{#each teamsOwned}}
-                <span>{{teamName}}</span>
-                <br>
-                <ul>
-                    {{#each members}}
-                        <li>Site name: {{getSiteName this}}</li>
-                        <li>League name: {{getSummonerName this}}</li>
-                    {{/each}}
-                </ul>
-                <br>
-                <button class="removeTeamButton" type="button" data-id={{_id}}>Remove team</button>
+                {{#each teamsNotOwned}}
+                    <span>{{teamName}}</span>
+                    <br>
+                    <ul>
+                        {{#each members}}
+                            <li>Site name: {{getSiteName this}}</li>
+                            <li>League name: {{getSummonerName this}}</li>
+                        {{/each}}
+                    </ul>
+                    <hr>
+                {{/each}}
+            </div>
+            <hr>
+            <hr>
+            <div class="col-lg-12">
+                <h3>Teams owned by you:</h3>
                 <hr>
-            {{/each}}
-        </div>
-    </div>
+                {{#each teamsOwned}}
+                    <span>{{teamName}}</span>
+                    <br>
+                    <ul>
+                        {{#each members}}
+                            <li>Site name: {{getSiteName this}}</li>
+                            <li>League name: {{getSummonerName this}}</li>
+                        {{/each}}
+                    </ul>
+                    <br>
+                    <button class="removeTeamButton" type="button" data-id={{_id}}>Remove team</button>
+                    <hr>
+                {{/each}}
+            </div>
+    </form>
 </template>
