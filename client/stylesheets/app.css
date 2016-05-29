@@ -33,6 +33,7 @@ h1 {
 
 #img-with-radius {
 	border-radius: 20px;
+    margin-left: 15em;
 }
 
 #placeholdersTeam, #text {
@@ -41,8 +42,10 @@ h1 {
 }
 
 .list-group {
-    margin-left: 5em;
+    margin-left: 40em;
     margin-right: 5em;
+    margin-top: -20em;
+    width: 30%;
 }
 
 .Playersearching, .Teamsearching {
@@ -79,9 +82,13 @@ input[type=submit] {
 
 .fb-like {
     margin-top: 0.5em;
+    margin-left: 1em;
 }
 
-.abouttext {
+#aboutText {
     width: 50%;
 }
 
+#mainBody {
+    text-align: center;
+}

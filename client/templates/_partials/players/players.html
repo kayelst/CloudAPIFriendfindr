@@ -70,14 +70,14 @@
   </form>
   <div id="list">
     <ol>
-      <ul class="list-group">
+      <div class="list-group">
         {{#each players}}
           {{#if nameCheck name}}
             {{#if languageCheck Language}}
               {{#if microphoneCheck Microphone}}
                 {{#if serverCheck Server}}
                   {{#if roleCheck Role}}
-                  <li class="list-group-item col-lg-1" >hi, {{name}}</li>
+                  <a href="#" class="list-group-item col-lg-3">hi, {{name}}</a>
                   <!--<button id="Add">Add player</button>-->
                   {{/if}}
                 {{/if}}
@@ -85,7 +85,7 @@
             {{/if}}
           {{/if}}
         {{/each}}
-      </ul>
+      </div>
     </ol>
   </div>
 </template>
