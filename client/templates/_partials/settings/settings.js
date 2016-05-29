@@ -7,12 +7,33 @@ Template.settings.helpers({
         return (x === y) ? {checked: 'checked'} : null;
     }
 });
+var ChosenMic;
+var GenderString;
 
 Template.MicCheck.events({
-    'submit .settingsForm': function(event, template) {
-        console.log("in michdjak;la")
-        var element = template.find('input:radio[name=MicCheck]:checked');
+    'click :radio': function(event, template) {
+        var element = template.find('input:radio[name=MicroCheck]:checked');
         console.log($(element).val());
+        var MicString = $(element).val();
+        if (Meteor.user().profile.microphone = true){
+            document.getElementById("Server")
+        }
+        if (MicString == "false"){
+            ChosenMic = false;
+        }
+        else if (MicString == "true") {
+            ChosenMic = true;
+        }
+
+    }
+});
+
+Template.GenderCheck.events({
+    'click :radio': function(event, template) {
+        var element = template.find('input:radio[name=GenderCheck]:checked');
+        console.log($(element).val());
+        GenderString = $(element).val();
+
     }
 });
 
@@ -34,6 +55,16 @@ Template.settings.events({
             var ChosenRole = Session.get("ChosenR");
             console.log(ChosenRole);
             Meteor.users.update(Meteor.userId(), {$set: {"profile.role": ChosenRole}});
+        });
+        
+       Meteor.call("getUpdatedMic", function(){
+           console.log("ChosenMic is " + ChosenMic);
+           Meteor.users.update(Meteor.userId(), {$set: {"profile.microphone": ChosenMic}});
+        });
+
+        Meteor.call("getUpdatedGender", function(){
+            console.log("GenderString is " + GenderString);
+            Meteor.users.update(Meteor.userId(), {$set: {"profile.gender": GenderString}});
         });
     }
 });

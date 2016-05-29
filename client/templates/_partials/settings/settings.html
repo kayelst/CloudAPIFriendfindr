@@ -6,20 +6,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="row">
-                <div class="col-lg-3">
-                    <input type="radio" name="gender" id="radio-gender-1"
-                           value="m" {{radio_equals 'm' currentUser.profile.gender}} >
-                    <span>Male</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3">
-                    <input type="radio" name="gender" id="radio-gender-2"
-                           value="f" {{radio_equals 'f' currentUser.profile.gender}} >
-                    <span>Female</span>
-                </div>
-            </div>
+            {{> GenderCheck }}
         </div>
         <hr>
         <div class="row">
@@ -76,8 +63,7 @@
             </div>
         </div>
         <hr>
-            {{> MicCheck}}
-
+            {{> MicCheck }}
         <hr>
         <div class="row">
             <div class="col-lg-5">
@@ -104,9 +90,17 @@
 <template name="MicCheck">
     <div class="row">
         <form class="col-lg-12">
-            <p>Do you own a microphone?</p>
-            <input type="radio" name="MicroCheck" value="true"> Yes<br>
-            <input type="radio" name="MicroCheck" value="false"> No
+            <input type="radio" id="status-micro-1" name="MicroCheck" value="true" checked> Yes<br>
+            <input type="radio" id="status-micro-2" name="MicroCheck" value="false"> No
+        </form>
+    </div>
+</template>
+
+<template name="GenderCheck">
+    <div class="row">
+        <form class="col-lg-12">
+            <input type="radio" id="status-gender-1" name="GenderCheck" value="m" checked> Male<br>
+            <input type="radio" id="status-gender-2" name="GenderCheck" value="f" > Female
         </form>
     </div>
 </template>
