@@ -1,6 +1,7 @@
 Meteor.methods({
     'addTeam': function (name) {
-        console.log(name)
+        if (!name) return false;
+
         Teams.insert({teamName: name, members: [Meteor.userId()], owner: Meteor.userId()}, function (err, res) {
             if (err) {
                 console.error(err);
@@ -10,6 +11,8 @@ Meteor.methods({
         });
     },
     'removeTeam': function (id) {
+        if (!id) return false;
+
         Teams.delete({_id: id}, function (err, res) {
             if (err) {
                 console.error(err);
@@ -19,6 +22,8 @@ Meteor.methods({
         });
     },
     'invitePlayer': function (teamId, playerId) {
+        if (!teamId || !playerId) return false;
+
         Invites.insert({teamId: teamId, playerId: playerId, status: 'pending'}, function (err, res) {
             if (err) {
                 console.error(err);
@@ -28,6 +33,8 @@ Meteor.methods({
         });
     },
     'cancelInvite': function (teamId, playerId) {
+        if (!teamId || !playerId) return false;
+
         Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'cancelled'}}, function (err, res) {
             if (err) {
                 console.error(err);
@@ -37,6 +44,8 @@ Meteor.methods({
         });
     },
     'acceptInvite': function (teamId, playerId) {
+        if (!teamId || !playerId) return false;
+
         Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'accepted'}}, function (err, res) {
             if (err) {
                 console.error(err);
