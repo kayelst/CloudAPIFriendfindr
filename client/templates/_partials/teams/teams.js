@@ -10,5 +10,5 @@ Template.homeTeams.events({
        event.preventDefault();
        Meteor.call("invitePlayer", teamId, playerId);
    }
-})
+});
 
