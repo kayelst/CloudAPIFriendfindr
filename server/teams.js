@@ -32,34 +32,45 @@ Meteor.methods({
             return res == 1;
         });
     },
-    'cancelInvite': function (teamId, playerId) {
-        if (!teamId || !playerId) return false;
+    'cancelInvite': function (id) {
+        if (!id) return false;
 
-        Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'cancelled'}}, function (err, res) {
-            if (err) {
-                console.error(err);
-                return false
-            }
-            return res == 1;
-        });
+        var doc = Invites.find({_id: id}).fetch();
+
+        if (doc[0]) {
+            Invites.update({_id: id}, {$set: {status: 'cancelled'}}, function (errInviteUpdate, resInviteUpdate) {
+                if (errInviteUpdate) {
+                    console.error(errInviteUpdate);
+                    return false
+                }
+
+                return resInviteUpdate == 1;
+            });
+        }
     },
-    'acceptInvite': function (teamId, playerId) {
-        if (!teamId || !playerId) return false;
+    'acceptInvite': function (id) {
+        if (!id) return false;
 
-        Invites.updateOne({teamId: teamId, playerId: playerId}, {$set: {status: 'accepted'}}, function (err, res) {
-            if (err) {
-                console.error(err);
-                return false
-            }
-            if (res == 1) {
-                Teams.updateOne({_id: teamId}, { $addToSet: { members: playerId }}, function (err, res) {
-                    if (err) {
-                        console.error(err);
-                        return false
-                    }
-                    return res == 1;
-                });
-            }
-        });
+        var doc = Invites.find({_id: id}).fetch();
+
+        if (doc[0]) {
+            Invites.update({_id: id}, {$set: {status: 'accepted'}}, function (errInviteUpdate, resInviteUpdate) {
+                if (errInviteUpdate) {
+                    console.error(errInviteUpdate);
+                    return false
+                }
+
+                if (resInviteUpdate == 1) {
+                    Teams.update({_id: doc[0].teamId}, {$addToSet: {members: doc[0].playerId}}, function (errTeamUpdate, resTeamUpdate) {
+                        if (errTeamUpdate) {
+                            console.error(errTeamUpdate);
+                            return false
+                        }
+
+                        return resTeamUpdate == 1;
+                    });
+                }
+            });
+        }
     }
 });

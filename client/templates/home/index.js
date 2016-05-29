@@ -12,10 +12,17 @@ Template.homeIndex.events({
 Template.homeIndex.helpers({
   'getSummonerName': function (value) {
     if (!value) return true;
-    return (Meteor.users.find({_id: value}, {fields: { 'profile.summonerName': true }}).fetch())["0"].profile.summonerName;
+
+      var user = (Meteor.users.find({_id: value}, {fields: { 'profile.summonerName': true }}).fetch())["0"];
+    if (!user || !user.profile || !user.profile.summonerName) return false;
+
+    return user.profile.summonerName;
   },
   'getSiteName': function (value) {
     if (!value) return true;
-    return (Meteor.users.find({_id: value}, {fields: { 'profile.name': true }}).fetch())["0"].profile.name;
+      var user = (Meteor.users.find({_id: value}, {fields: { 'profile.name': true }}).fetch())["0"];
+      if (!user || !user.profile || !user.profile.name) return false;
+
+    return user.profile.name;
   }
 });

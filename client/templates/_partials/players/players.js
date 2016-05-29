@@ -50,4 +50,13 @@ Template.homePlayers.events({
    }
 });
 
+Template.homePlayers.events({
+    'click .add': function(event) {
+        event.preventDefault();
+        teamId = document.getElementById('Teams').value;
+        playerId = event.currentTarget.attributes["data-id"].value;
+        Meteor.call("invitePlayer", teamId, playerId);
+    }
+});
+
 
