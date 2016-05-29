@@ -12,28 +12,37 @@
         <div class="row">
             <div class="col-lg-12">
                 <form>
-                    <input type="radio" id="status-gender-1" name="gender" value="m" checked="{{equals currentUser.profile.gender 'm'}}"> Male<br>
-                    <input type="radio" id="status-gender-2" name="gender" value="f" checked="{{equals currentUser.profile.gender 'f'}}"> Female
+                    <input type="radio" id="status-gender-1" name="gender" value="m"
+                           checked="{{equals currentUser.profile.gender 'm'}}"> Male<br>
+                    <input type="radio" id="status-gender-2" name="gender" value="f"
+                           checked="{{equals currentUser.profile.gender 'f'}}"> Female
                 </form>
             </div>
         </div>
         <hr>
-            <div class="row">
-                <div class="col-lg-5">
-                    {{#if currentUser.profile.verified}}
+        <div class="row">
+                {{#if currentUser.profile.verified}}
+                    <div class="col-lg-5">
                         <span class="alert alert-success">Verified</span>
-                    {{else}}
-                        <span class="alert-warning">Unverified</span>
-                        <input type="text" id="summonerName" class="col-lg-3" value="{{currentUser.profile.summonerName}}">
-                        <button id="verifyButton" class="col-lg-2" >Verify</button>
-                    {{/if}}
-                </div>
-            </div>
+                    </div>
+                {{else}}
+                    <div class="col-lg-12">
+                        <input type="text" id="summonerName" class="col-lg-1"
+                               value="{{currentUser.profile.summonerName}}">
+                        <button id="verifyButton" class="col-lg-1">Verify</button>
+                    </div>
+                    <div class="col-lg-12">
+                        <br/>
+                        <br/>
+                        <span class="alert alert-warning">Unverified</span>
+                    </div>
+                {{/if}}
+        </div>
         <hr>
         <div class="row">
             <div class="form-group">
                 <div class="col-sm-2">
-                <p> Pick what server you play on </p>
+                    <p> Pick what server you play on </p>
                     <select id="server" class="form-control">
                         <option value="euw" selected="{{equals currentUser.profile.server 'euw'}}">EUW</option>
                         <option value="na" selected="{{equals currentUser.profile.server 'na'}}">NA</option>
@@ -41,7 +50,7 @@
                         <option value="tr" selected="{{equals currentUser.profile.server 'tr'}}">TR</option>
                         <option value="lan" selected="{{equals currentUser.profile.server 'lan'}}">LAN</option>
                         <option value="jap" selected="{{equals currentUser.profile.server 'jap'}}">JAP</option>
-                    </select> 
+                    </select>
                 </div>
             </div>
         </div>
@@ -51,9 +60,12 @@
                 <div class="col-sm-2">
                     <p> Pick what language you prefer to communicate with </p>
                     <select id="language" class="form-control">
-                        <option value="english" selected="{{equals currentUser.profile.language 'english'}}">English</option>
-                        <option value="german" selected="{{equals currentUser.profile.language 'german'}}">German</option>
-                        <option value="spanish" selected="{{equals currentUser.profile.language 'spanish'}}">Spanish</option>
+                        <option value="english" selected="{{equals currentUser.profile.language 'english'}}">English
+                        </option>
+                        <option value="german" selected="{{equals currentUser.profile.language 'german'}}">German
+                        </option>
+                        <option value="spanish" selected="{{equals currentUser.profile.language 'spanish'}}">Spanish
+                        </option>
                         <option value="dutch" selected="{{equals currentUser.profile.language 'dutch'}}">Dutch</option>
                     </select>
                 </div>
@@ -63,24 +75,24 @@
         <div class="row">
             <div class="form-group">
                 <div class="col-sm-2">
-                <p> Pick what Role you main </p>
+                    <p> Pick what Role you main </p>
                     <select id="role" class="form-control">
                         <option value="top" selected="{{equals currentUser.profile.role 'top'}}">TOP</option>
                         <option value="jgl" selected="{{equals currentUser.profile.role 'jgl'}}">Jungle</option>
                         <option value="mid" selected="{{equals currentUser.profile.role 'mid'}}">Midlane</option>
                         <option value="adc" selected="{{equals currentUser.profile.role 'adc'}}">Marksman</option>
                         <option value="sup" selected="{{equals currentUser.profile.role 'sup'}}">Support</option>
-                    </select> 
+                    </select>
                 </div>
             </div>
         </div>
         <hr>
-            <div class="row">
-                <form class="col-lg-12">
-                    <p>Do you own a Microphone?</p>
-                    <input type="checkbox" id="microphone" checked="{{currentUser.profile.microphone}}">Yes<br>
-                </form>
-            </div>
+        <div class="row">
+            <form class="col-lg-12">
+                <p>Do you own a Microphone?</p>
+                <input type="checkbox" id="microphone" checked="{{currentUser.profile.microphone}}">Yes<br>
+            </form>
+        </div>
         <hr>
         <div class="row">
             <div class="col-lg-5">
@@ -96,10 +108,6 @@
         <button type="submit" class="btn btn-warning">
             <div class="glyphicon glyphicon-save"></div>
             Save changes
-        </button>
-        <button type="button" class="btn btn-danger">
-            <div class="glyphicon glyphicon-remove"></div>
-            Delete account
         </button>
     </form>
 </template>
