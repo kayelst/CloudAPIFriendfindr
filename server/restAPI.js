@@ -64,7 +64,7 @@ JsonRoutes.add("post", "/api/invites", function (req, res) {
         });
     }
 
-    Invites.insert({teamId: body.teamId, playerId: body.playerId}, function(err, id) {
+    Invites.insert({teamId: body.teamId, playerId: body.playerId, status: 'pending'}, function(err, id) {
         if (err) {
             JsonRoutes.sendResult(res, {
                 data: err,
